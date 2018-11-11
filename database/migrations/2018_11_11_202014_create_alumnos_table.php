@@ -18,7 +18,7 @@ class CreateAlumnosTable extends Migration
             $table->string('nombre');
             $table->string('correo');
             $table->integer('telefono');
-            $table->string('rol');
+            $table->boolean('delegado');
             $table->integer('rut')->nullable(false)->change();
             $table->timestamps();
         });
