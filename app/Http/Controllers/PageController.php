@@ -11,8 +11,5 @@ class PageController extends Controller
     {
         //return view('vistasPublicas.index');
     }
-    
-
-
 
 }

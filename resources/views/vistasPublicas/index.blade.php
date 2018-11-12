@@ -65,7 +65,7 @@
 
      <div class="container">
 
-      <h1>Estoy en el index - rama pablo</h1>
+      <h1>Estoy en el index</h1>
       <br>
       <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Adipisci, in recusandae optio unde error qui aspernatur voluptatem harum neque eum maxime repudiandae possimus, laudantium quos commodi ipsa repellendus magni accusamus.</p>
 
