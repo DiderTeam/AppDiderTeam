@@ -16,6 +16,7 @@ class CreateCanchasTable extends Migration
         Schema::create('canchas', function (Blueprint $table) {
             $table->increments('id');
             $table->string('nombre');
+            $table->boolean('disponible');
             $table->timestamps();
         });
     }
