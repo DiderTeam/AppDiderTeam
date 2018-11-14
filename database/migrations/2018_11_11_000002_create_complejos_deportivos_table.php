@@ -17,8 +17,6 @@ class CreateComplejosDeportivosTable extends Migration
             $table->increments('id');
             $table->string('nombre');
             $table->string('direccion');
-            $table->string('horarioinicio');
-            $table->string('horariofinal');
             $table->string('coordenada');
             $table->timestamps();
         });
