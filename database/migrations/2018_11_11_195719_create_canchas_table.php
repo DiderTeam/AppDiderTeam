@@ -17,6 +17,8 @@ class CreateCanchasTable extends Migration
             $table->increments('id');
             $table->string('nombre');
             $table->boolean('disponible');
+            $table->integer('idComplejoDeportivo')->unsigned();
+            $table->foreign('idComplejoDeportivo')->references('id')->on('complejos_deportivos');
             $table->timestamps();
         });
     }

@@ -21,6 +21,8 @@ class CreateDatosUsuariosTable extends Migration
             $table->enum('rol',['Administrador','Delegados','Alumno']);
             $table->string('carrera');
             $table->boolean('bloqueado');
+            $table->integer('idUser')->unsigned();
+            $table->foreign('idUser')->references('id')->on('users');
             $table->timestamps();
 
         });

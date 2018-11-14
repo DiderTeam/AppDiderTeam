@@ -19,6 +19,7 @@ class CreateBloqueHorariosTable extends Migration
             $table->string('horariofinal');
             $table->boolean('reservado');
             $table->integer('idReserva')->unsigned();
+            $table->foreign('idReserva')->references('id')->on('reservas');
             $table->timestamps();
         });
     }
