@@ -25,4 +25,8 @@ class HomeController extends Controller
     {
         return view('vistasDelegados.home');
     }
+    public function infoAdmin()
+    {
+        return view('vistasDelegados.infoAdmin');
+    }
 }

@@ -6,6 +6,7 @@
         <div class="col-md-8">
             
             <div class="card">
+            
                 <div class="card-header">Sistema de reservas de canchas</div>
 
                 <div class="card-body">
@@ -13,7 +14,7 @@
                         <div class="alert alert-success" role="alert">
                             {{ session('status') }}
                         </div>
-                    @endif
+                    @endif          
                     <form class="bd-example">
                         
                         <fieldset>
@@ -77,6 +78,7 @@
                         </fieldset>
                         
                       </form>
+                      
                     
                 </div>
             </div>

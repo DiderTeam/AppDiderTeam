@@ -19,10 +19,15 @@ Route::view('/reglamento','vistasPublicas.reglamento')->name('reglamento');
 
 Route::view('/UbicaionC','vistasPublicas.UbicacionC')->name('ubicacion');
 
-/*------------------------ Vistas dinamicas ----------------------------------*/
+/*------------------------ Vistas dinamicas Delegados----------------------------------*/
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/home', 'HomeController@index')->name('home'); // vista reserva delegado
 
-Route::view('/reserva','reserva')->name('reserva');
+Route::get('/infoAdmin','HomeController@infoAdmin')->name('infoAdmin');
 
-Route::view('/welcome','welcome')->name('Laravel');
+/*------------------------ Vistas dinamicas Admin----------------------------------*/
+
+
+
+
+//Route::view('/welcome','welcome')->name('Laravel'); //vista laravel default
