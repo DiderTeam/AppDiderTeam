@@ -23,7 +23,9 @@ Route::view('/UbicaionC','vistasPublicas.UbicacionC')->name('ubicacion');
 
 Route::get('/home', 'HomeController@index')->name('home'); // vista reserva delegado
 
-Route::get('/infoAdmin','HomeController@infoAdmin')->name('infoAdmin');
+Route::get('/infoDelegado','HomeController@infoDelegado')->name('infoDelegado');
+
+Route::get('/HistorialReservas','HomeController@HistorialReservas')->name('HistorialReservas');
 
 /*------------------------ Vistas dinamicas Admin----------------------------------*/
 

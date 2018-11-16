@@ -36,9 +36,9 @@
                        
                         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                             <div class="navbar-nav">
-                                <a class="nav-item nav-link" href="{{ route('login') }}">Home</a>
-                                <a class="nav-item nav-link active" href="{{ route('infoAdmin') }}">Perfil Delegado</a>
-                                <a class="nav-item nav-link" href="#">Ingresar otra vista</a>
+                                <a class="nav-item nav-link active" href="{{ route('login') }}">Home</a>
+                                <a class="nav-item nav-link" href="{{ route('infoDelegado') }}">Perfil Delegado</a>
+                                <a class="nav-item nav-link" href="{{ route('HistorialReservas') }}">Historial de Reservas</a>
                             </div>
                         </div>
                     </nav>

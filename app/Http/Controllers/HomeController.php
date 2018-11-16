@@ -25,8 +25,13 @@ class HomeController extends Controller
     {
         return view('vistasDelegados.home');
     }
-    public function infoAdmin()
+    public function infoDelegado()
     {
         return view('vistasDelegados.infoAdmin');
     }
+    public function HistorialReservas()
+    {
+        return view('vistasDelegados.HistorialReservas');
+    }
+    
 }

@@ -9,7 +9,7 @@ class PageController extends Controller
     
     public function index()
     {
-        return view('vistasDelegados.infoAdmin');
+       // return view('vistasDelegados.infoAdmin');
     }
 
 }
