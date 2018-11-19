@@ -13,11 +13,11 @@ class ComplejoDeportivoController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function     index()
     {
         $complejosDeportivos = complejosDeportivos::all();
         dd($complejosDeportivos);
-        return \View::make('vistasDelegados',compact('complejosDeportivos'));
+        return View::make('vistasDelegados.home',compact('complejosDeportivos'));
     }
 
     /**
