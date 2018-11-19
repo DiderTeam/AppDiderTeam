@@ -7,7 +7,7 @@ Route::get('/', function () {
 
 Auth::routes();
 
-/*------------------------ Vistas estaticas ----------------------------------*/
+/*------------------------ Vistas estaticas y publicas ----------------------------------*/
 
 Route::view('/','vistasPublicas.index')->name('index');
 
@@ -21,14 +21,23 @@ Route::view('/UbicaionC','vistasPublicas.UbicacionC')->name('ubicacion');
 
 /*------------------------ Vistas dinamicas Delegados----------------------------------*/
 
-Route::get('/home', 'HomeController@index')->name('home'); // vista reserva delegado
+Route::group(['middleware' => 'auth'], function () {
 
-Route::get('/infoDelegado','HomeController@infoDelegado')->name('infoDelegado');
+    Route::get('/home', 'HomeController@index')->name('home'); // vista reserva delegado
 
-Route::get('/HistorialReservas','HomeController@HistorialReservas')->name('HistorialReservas');
+    Route::get('/infoDelegado','HomeController@infoDelegado')->name('infoDelegado');
 
-/*------------------------ Vistas dinamicas Admin----------------------------------*/
+    Route::get('/HistorialReservas','HomeController@HistorialReservas')->name('HistorialReservas');
 
+});
+
+/*------------------------ Vistas dinamicas Administrador----------------------------------*/
+
+Route::group(['middleware' => 'usuarioAdmin'], function () {
+
+    Route::get('/Admin','HomeController@VistaAdmin')->name('VistaAdmin');
+
+});
 
 
 

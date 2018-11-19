@@ -33,5 +33,9 @@ class HomeController extends Controller
     {
         return view('vistasDelegados.HistorialReservas');
     }
+    public function VistaAdmin()
+    {
+        return view('vistasAdmin.indexAdmin');
+    }
     
 }

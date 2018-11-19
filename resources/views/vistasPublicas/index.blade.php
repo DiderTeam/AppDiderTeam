@@ -66,6 +66,7 @@
      <div class="container">
 
       <h1>Estoy en el index</h1>
+      <h3>Ultimas resrvas</h3>
       <br>
       <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Adipisci, in recusandae optio unde error qui aspernatur voluptatem harum neque eum maxime repudiandae possimus, laudantium quos commodi ipsa repellendus magni accusamus.</p>
 
