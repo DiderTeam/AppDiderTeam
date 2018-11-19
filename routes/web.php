@@ -23,7 +23,9 @@ Route::view('/UbicaionC','vistasPublicas.UbicacionC')->name('ubicacion');
 
 Route::group(['middleware' => 'auth'], function () {
 
-    Route::get('/ComplejosDeportivos', 'ComplejosDeportivosController@index')->name('ComplejosDeportivos');
+    //Route::resource('/ComplejosDeportivos','ComplejosDeportivosController');
+
+    Route::get('/ComplejosDeportivos', 'Complejodepot@index')->name('ComplejosDeportivos');
 
     Route::get('/home', 'HomeController@index')->name('home'); // vista reserva delegado
 

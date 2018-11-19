@@ -2,12 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\ComplejoDeportivo;
+use App\complejodepot;
 use Illuminate\Http\Request;
 
-class ComplejoDeportivoController extends Controller
+class ComplejodepotController extends Controller
 {
-    
     /**
      * Display a listing of the resource.
      *
@@ -15,9 +14,7 @@ class ComplejoDeportivoController extends Controller
      */
     public function index()
     {
-        $complejosDeportivos = complejosDeportivos::all();
-        dd($complejosDeportivos);
-        return \View::make('vistasDelegados',compact('complejosDeportivos'));
+        return View('vistasDelegados.home');
     }
 
     /**
@@ -38,18 +35,16 @@ class ComplejoDeportivoController extends Controller
      */
     public function store(Request $request)
     {
-        $complejosDeportivos = new App\ComplejoDeportivo;
-        $complejosDeportivos->create($request->all());
-        return redirect('complejosDeportivos');
+        //
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\ComplejoDeportivo  $complejosDeportivos
+     * @param  \App\complejodepot  $complejodepot
      * @return \Illuminate\Http\Response
      */
-    public function show(ComplejoDeportivo $complejoDeportivo)
+    public function show(complejodepot $complejodepot)
     {
         //
     }
@@ -57,10 +52,10 @@ class ComplejoDeportivoController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\ComplejoDeportivo  $complejoDeportivo
+     * @param  \App\complejodepot  $complejodepot
      * @return \Illuminate\Http\Response
      */
-    public function edit(ComplejoDeportivo $complejoDeportivo)
+    public function edit(complejodepot $complejodepot)
     {
         //
     }
@@ -69,10 +64,10 @@ class ComplejoDeportivoController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\ComplejoDeportivo  $complejoDeportivo
+     * @param  \App\complejodepot  $complejodepot
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, ComplejoDeportivo $complejoDeportivo)
+    public function update(Request $request, complejodepot $complejodepot)
     {
         //
     }
@@ -80,10 +75,10 @@ class ComplejoDeportivoController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\ComplejoDeportivo  $complejoDeportivo
+     * @param  \App\complejodepot  $complejodepot
      * @return \Illuminate\Http\Response
      */
-    public function destroy(ComplejoDeportivo $complejoDeportivo)
+    public function destroy(complejodepot $complejodepot)
     {
         //
     }
