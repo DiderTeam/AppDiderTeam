@@ -15,7 +15,8 @@ class ComplejoDeportivoController extends Controller
      */
     public function index()
     {
-        $complejosDeportivos = ComplejoDeportivo::all(); 
+        $complejosDeportivos = complejosDeportivos::all();
+        dd($complejosDeportivos);
         return \View::make('vistasDelegados',compact('complejosDeportivos'));
     }
 
