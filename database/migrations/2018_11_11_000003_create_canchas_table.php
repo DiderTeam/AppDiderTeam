@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateComplejoDeportivosTable extends Migration
+class CreateCanchasTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,12 @@ class CreateComplejoDeportivosTable extends Migration
      */
     public function up()
     {
-        Schema::create('complejo_deportivos', function (Blueprint $table) {
+        Schema::create('canchas', function (Blueprint $table) {
             $table->increments('id');
             $table->string('nombre');
-            $table->string('direccion');
-            $table->string('horarioinicio');
-            $table->string('horariofinal');
-            $table->string('coordenada');
+            $table->boolean('disponible');
+            $table->integer('idComplejoDeportivo')->unsigned();
+            $table->foreign('idComplejoDeportivo')->references('id')->on('complejos_deportivos');
             $table->timestamps();
         });
     }
@@ -31,6 +30,6 @@ class CreateComplejoDeportivosTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('complejo_deportivos');
+        Schema::dropIfExists('canchas');
     }
 }
