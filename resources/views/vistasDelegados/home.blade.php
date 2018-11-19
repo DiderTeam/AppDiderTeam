@@ -14,16 +14,16 @@
                             {{ session('status') }}
                         </div>
                     @endif
-                    <form class="bd-example">
-                        
+                    <form class="bd-example">                        
                         <fieldset>
 
                           <p>
-                            <label for="select">Selecione un complejo deportivo</label>
-                            <select id="select">
-                                <option value="">Selecione</option>
-                                <option value="">Gimnacio CC </option>
-                                <option value="">Estadio Español</option>
+                            <label for="select">Selecione una cancha</label>
+                            <select name="complejoDeport_id" id="inputComplejoDeport_id" class="form-control">
+                                <option value="">--Seleccione un complejo deportivo--</option>
+                                @foreach($complejosDeportivos as $complejoDeportivo)
+                                  <option value="{{ $complejoDeportivo ['id'] }}">{{ $complejoDeportivo ['nombre'] }}</option>
+                                @endforeach
                             </select>
                           </p>
 
