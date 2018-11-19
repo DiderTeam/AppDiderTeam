@@ -33,7 +33,7 @@ Route::group(['middleware' => 'auth'], function () {
 
 /*------------------------ Vistas dinamicas Administrador----------------------------------*/
 
-Route::group(['middleware' => 'usuarioAdmin'], function () {
+Route::group(['middleware' => 'auth'], function () {
 
     Route::get('/Admin','HomeController@VistaAdmin')->name('VistaAdmin');
 
