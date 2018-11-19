@@ -22,6 +22,7 @@ class CreateComplejosDeportivosTable extends Migration
         });
     }
 
+    
     /**
      * Reverse the migrations.
      *

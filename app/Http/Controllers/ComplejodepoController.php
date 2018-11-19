@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\complejodepot;
+use App\complejodepo;
 use Illuminate\Http\Request;
 
-class ComplejodepotController extends Controller
+class ComplejodepoController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +14,7 @@ class ComplejodepotController extends Controller
      */
     public function index()
     {
-        return View('vistasDelegados.home');
+        //
     }
 
     /**
@@ -41,10 +41,10 @@ class ComplejodepotController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\complejodepot  $complejodepot
+     * @param  \App\complejodepo  $complejodepo
      * @return \Illuminate\Http\Response
      */
-    public function show(complejodepot $complejodepot)
+    public function show(complejodepo $complejodepo)
     {
         //
     }
@@ -52,10 +52,10 @@ class ComplejodepotController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\complejodepot  $complejodepot
+     * @param  \App\complejodepo  $complejodepo
      * @return \Illuminate\Http\Response
      */
-    public function edit(complejodepot $complejodepot)
+    public function edit(complejodepo $complejodepo)
     {
         //
     }
@@ -64,10 +64,10 @@ class ComplejodepotController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\complejodepot  $complejodepot
+     * @param  \App\complejodepo  $complejodepo
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, complejodepot $complejodepot)
+    public function update(Request $request, complejodepo $complejodepo)
     {
         //
     }
@@ -75,10 +75,10 @@ class ComplejodepotController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\complejodepot  $complejodepot
+     * @param  \App\complejodepo  $complejodepo
      * @return \Illuminate\Http\Response
      */
-    public function destroy(complejodepot $complejodepot)
+    public function destroy(complejodepo $complejodepo)
     {
         //
     }
