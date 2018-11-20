@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\ComplejoDeportivo;
+use App\ComplejoDeportivo as ComplejoDeportivo;
 use Illuminate\Http\Request;
 
 class ComplejoDeportivoController extends Controller
@@ -26,16 +26,16 @@ class ComplejoDeportivoController extends Controller
 
      public function index()
     {
-        $complejosDeportivos = complejosDeportivos::all();
+        $complejosDeportivos = ComplejosDeportivos::all();
         dd($complejosDeportivos);
-        return View::make('vistasDelegados.home',compact('complejosDeportivos'));
+        return View('vistasDelegados.home',compact('complejosDeportivos'));
     }
+
 
     public function llenadoComplejo()
     {
-        $complejoDeportivo  = complejosDeportivos::all();
-        $complejoDeportivo = DB::select('Select * From complejo_deportivo');
-        return View::make('vistasDelegados.home',compact('complejosDeportivos'));
+        $complejoDeportivo  = complejoDeportivo::all();
+        return View('vistasDelegados.home',compact('complejosDeportivos'));
     }
 
     /**

@@ -19,11 +19,11 @@ Route::view('/reglamento','vistasPublicas.reglamento')->name('reglamento');
 
 Route::view('/UbicaionC','vistasPublicas.UbicacionC')->name('ubicacion');
 
-/*------------------------ Vistas dinamicas ----------------------------------*/
+/*------------------------ Vistas dinamicas ----------------------- -----------*/
 
 Route::get('ComplejosDeportivos', 'ComplejoDeportivoController@llenadoComplejo');
 
-Route::get('ComplejosDeportivos', 'ComplejoDeportivoController@Select');
+//Route::get('ComplejosDeportivos', 'ComplejoDeportivoController@Select');
 
 Route::get('/home', 'HomeController@index')->name('home');
 
