@@ -25,6 +25,8 @@ Route::group(['middleware' => 'auth'], function () {
 
     //Route::resource('/ComplejosDeportivos','ComplejosDeportivosController');
 
+    Route::get('/HistorialReservas','HomeController@HistorialReservas')->name('HistorialReservas');
+
     Route::get('/ComplejosDeportivos', 'Complejodepot@index')->name('ComplejosDeportivos');
 
     Route::get('/home', 'HomeController@index')->name('home'); // vista reserva delegado
@@ -35,7 +37,7 @@ Route::group(['middleware' => 'auth'], function () {
 
 });
 
-    Route::get('/HistorialReservas','HomeController@HistorialReservas')->name('HistorialReservas');
+    
 /*------------------------ Vistas dinamicas Administrador----------------------------------*/
 
 //Route::group(['middleware' => 'usuarioAdmin'], function () {
