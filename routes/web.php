@@ -31,10 +31,11 @@ Route::group(['middleware' => 'auth'], function () {
 
     Route::get('/infoDelegado','HomeController@infoDelegado')->name('infoDelegado');
 
-    Route::get('/HistorialReservas','HomeController@HistorialReservas')->name('HistorialReservas');
+   
 
 });
 
+    Route::get('/HistorialReservas','HomeController@HistorialReservas')->name('HistorialReservas');
 /*------------------------ Vistas dinamicas Administrador----------------------------------*/
 
 //Route::group(['middleware' => 'usuarioAdmin'], function () {

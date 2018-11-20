@@ -31,7 +31,9 @@ class HomeController extends Controller
     }
     public function HistorialReservas()
     {
-        return view('vistasDelegados.HistorialReservas');
+        $users = App\User::all();
+        return view('vistasDelegados.HistorialReservas',compact('users'));
+        
     }
     public function VistaAdmin()
     {

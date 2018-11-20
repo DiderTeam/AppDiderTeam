@@ -23,9 +23,11 @@
                             <label for="select">Selecione una cancha</label>
                             <select name="complejoDeport_id" id="inputComplejoDeport_id" class="form-control">
                                 <option value="">--Seleccione un complejo deportivo--</option>
-                                 @foreach($complejosDeportivos as $complejoDeportivo)
+                                {{-- 
+                                @foreach($complejosDeportivos as $complejoDeportivo)
                                   <option value="{{ $complejoDeportivo ['id'] }}">{{ $complejoDeportivo ['nombre'] }}</option>
                                 @endforeach
+                                --}}
                             </select>
                           </p>
 
