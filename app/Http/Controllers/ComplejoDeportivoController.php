@@ -13,10 +13,28 @@ class ComplejoDeportivoController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function     index()
+    
+     public function select(){
+        $data=DB::table('complejos_deportivos')->get();
+        return view('vistasDelegados.home')->with('data',$data);
+     }
+
+     public function postSelect(Request $request)
+     {
+        dd($request->all());
+     }
+
+     public function index()
     {
         $complejosDeportivos = complejosDeportivos::all();
         dd($complejosDeportivos);
+        return View::make('vistasDelegados.home',compact('complejosDeportivos'));
+    }
+
+    public function llenadoComplejo()
+    {
+        $complejoDeportivo  = complejosDeportivos::all();
+        $complejoDeportivo = DB::select('Select * From complejo_deportivo');
         return View::make('vistasDelegados.home',compact('complejosDeportivos'));
     }
 
@@ -51,7 +69,11 @@ class ComplejoDeportivoController extends Controller
      */
     public function show(ComplejoDeportivo $complejoDeportivo)
     {
-        //
+        $data = \DB::select('SELECT * FROM complejos_deportivos');
+
+        return view( 'home' )
+        ->with( 'complejos_deportivos
+        ', $data );
     }
 
     /**

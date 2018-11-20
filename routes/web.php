@@ -21,7 +21,9 @@ Route::view('/UbicaionC','vistasPublicas.UbicacionC')->name('ubicacion');
 
 /*------------------------ Vistas dinamicas ----------------------------------*/
 
-Route::get('/ComplejosDeportivos', 'ComplejoDeportivoController@index')->name('ComplejoDeportivo');
+Route::get('ComplejosDeportivos', 'ComplejoDeportivoController@llenadoComplejo');
+
+Route::get('ComplejosDeportivos', 'ComplejoDeportivoController@Select');
 
 Route::get('/home', 'HomeController@index')->name('home');
 
