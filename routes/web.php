@@ -19,17 +19,9 @@ Route::view('/reglamento','vistasPublicas.reglamento')->name('reglamento');
 
 Route::view('/UbicaionC','vistasPublicas.UbicacionC')->name('ubicacion');
 
-<<<<<<< HEAD
-/*------------------------ Vistas dinamicas ----------------------- -----------*/
-
-Route::get('ComplejosDeportivos', 'ComplejoDeportivoController@llenadoComplejo');
-
-//Route::get('ComplejosDeportivos', 'ComplejoDeportivoController@Select');
-=======
 /*------------------------ Vistas dinamicas Delegados----------------------------------*/
 
 Route::group(['middleware' => 'auth'], function () {
->>>>>>> master
 
     //Route::resource('/ComplejosDeportivos','ComplejosDeportivosController');
 
@@ -48,9 +40,9 @@ Route::group(['middleware' => 'auth'], function () {
     
 /*------------------------ Vistas dinamicas Administrador----------------------------------*/
 
-//Route::group(['middleware' => 'usuarioAdmin'], function () {
+Route::group(['middleware' => 'usuarioAdmin'], function () {
 
-    //Route::get('/Admin','HomeController@VistaAdmin')->name('VistaAdmin');
+    Route::get('/Admin','HomeController@VistaAdmin')->name('VistaAdmin');
 
     Route::get('/perfiladministrador','AdministradorController@Perfil')->name('perfiladministrador');
 
