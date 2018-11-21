@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\User as User;
 
 class HomeController extends Controller
 {
@@ -15,7 +16,6 @@ class HomeController extends Controller
     {
         $this->middleware('auth');
     }
-
     /**
      * Show the application dashboard.
      *
@@ -25,4 +25,18 @@ class HomeController extends Controller
     {
         return view('vistasDelegados.home');
     }
+    public function infoDelegado()
+    {
+        return view('vistasDelegados.infoAdmin');
+    }
+    public function HistorialReservas()
+    {
+        $users = User::all();
+        return view('vistasDelegados.HistorialReservas',compact('users'));
+    }
+    public function VistaAdmin()
+    {
+        return view('vistasAdmin.indexAdmin');
+    }
+    
 }

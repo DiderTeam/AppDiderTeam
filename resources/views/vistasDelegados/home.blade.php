@@ -9,6 +9,7 @@
         <div class="col-md-8">
             
             <div class="card">
+            
                 <div class="card-header">Sistema de reservas de canchas</div>
 
                 <div class="card-body">
@@ -16,17 +17,20 @@
                         <div class="alert alert-success" role="alert">
                             {{ session('status') }}
                         </div>
-                    @endif
-                    <form class="bd-example">                        
-                        <fieldset>
+                    @endif          
+                    <form class="bd-example">
+                        
+                      <fieldset> 
 
-                          <p>
+                         <p>
                             <label for="select">Selecione una cancha</label>
                             <select name="complejoDeport_id" id="inputComplejoDeport_id" class="form-control">
                                 <option value="">--Seleccione un complejo deportivo--</option>
+                                {{-- 
                                 @foreach($complejosDeportivos as $complejoDeportivo)
                                   <option value="{{ $complejoDeportivo ['id'] }}">{{ $complejoDeportivo ['nombre'] }}</option>
                                 @endforeach
+                                --}}
                             </select>
                           </p>
 
@@ -80,6 +84,7 @@
                         </fieldset>
                         
                       </form>
+                      
                     
                 </div>
             </div>

@@ -10,9 +10,7 @@ class ComplejoDeportivo extends Model
     protected $primaryKey  = 'id';
     protected $fillable = ['nombre','direccion','coordenadas'];
 
-    public function Canchas(){
-        return $this->hasMany(Canchas::class);
-    }
-
-    public function 
+   // public function Canchas(){
+    //    return $this->hasMany(Canchas::class);
+    //}
 }

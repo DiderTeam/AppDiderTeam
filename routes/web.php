@@ -7,7 +7,7 @@ Route::get('/', function () {
 
 Auth::routes();
 
-/*------------------------ Vistas estaticas ----------------------------------*/
+/*------------------------ Vistas estaticas y publicas ----------------------------------*/
 
 Route::view('/','vistasPublicas.index')->name('index');
 
@@ -19,14 +19,51 @@ Route::view('/reglamento','vistasPublicas.reglamento')->name('reglamento');
 
 Route::view('/UbicaionC','vistasPublicas.UbicacionC')->name('ubicacion');
 
+<<<<<<< HEAD
 /*------------------------ Vistas dinamicas ----------------------- -----------*/
 
 Route::get('ComplejosDeportivos', 'ComplejoDeportivoController@llenadoComplejo');
 
 //Route::get('ComplejosDeportivos', 'ComplejoDeportivoController@Select');
+=======
+/*------------------------ Vistas dinamicas Delegados----------------------------------*/
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::group(['middleware' => 'auth'], function () {
+>>>>>>> master
 
-Route::view('/reserva','reserva')->name('reserva');
+    //Route::resource('/ComplejosDeportivos','ComplejosDeportivosController');
 
-Route::view('/welcome','welcome')->name('Laravel');
+    Route::get('/HistorialReservas','HomeController@HistorialReservas')->name('HistorialReservas');
+
+    Route::get('/ComplejosDeportivos', 'Complejodepot@index')->name('ComplejosDeportivos');
+
+    Route::get('/home', 'HomeController@index')->name('home'); // vista reserva delegado
+
+    Route::get('/infoDelegado','HomeController@infoDelegado')->name('infoDelegado');
+
+   
+
+});
+
+    
+/*------------------------ Vistas dinamicas Administrador----------------------------------*/
+
+//Route::group(['middleware' => 'usuarioAdmin'], function () {
+
+    //Route::get('/Admin','HomeController@VistaAdmin')->name('VistaAdmin');
+
+    Route::get('/perfiladministrador','AdministradorController@Perfil')->name('perfiladministrador');
+
+    Route::get('/gestiondelegado','AdministradorController@delegado')->name('gestiondelegado');
+
+    Route::get('/gestioncancha','AdministradorController@canchas')->name('gestioncancha');
+
+    Route::get('/gestioninformacion','AdministradorController@informacion')->name('gestioninformacion');
+
+    Route::get('/porcentajeuso','AdministradorController@porcentajeuso')->name('porcentajeuso');
+
+//});
+
+
+
+//Route::view('/welcome','welcome')->name('Laravel'); //vista laravel default
