@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
+<link rel="stylesheet" href="//cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css"> <!-- //jquery css -->
 <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-8">
@@ -17,16 +18,8 @@
                         
                         <h1>Historial de reservas</h1>
                         <br>
-                        <!--
-                        <div class="list-group">
-                            <a href="#" class="list-group-item ">Cras justo odio</a>
-                            <a href="#" class="list-group-item">Dapibus ac facilisis in</a>
-                            <a href="#" class="list-group-item">Morbi leo risus</a>
-                            <a href="#" class="list-group-item">Porta ac consectetur ac</a>
-                            <a href="#" class="list-group-item">Vestibulum at eros</a>
-                        </div>
-                        -->
-                        <table class="table">
+                 
+                        <table class="table" id="users">
                             <thead>
                                 <tr>
                                     <th>ID</th>
@@ -34,7 +27,7 @@
                                     <th>Email</th>
                                 </tr>
                             </thead>
-                            {{-- --}}
+                            {{--  --}}
                             <tbody>
                                 @foreach($users as $user)
                                     <tr>
@@ -43,17 +36,21 @@
                                         <td>{{ $user->email }}</td>
                                     </tr>
                                 @endforeach
-                            </tbody>
-                            
+                            </tbody>    
                         </table>
-  
-                             
                     </div>
                 </div>
-                
-    
             </div>
         </div>
     </div>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> <!-- //jquery js -->
+    <script src="//cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script> <!-- //datatables js jquery -->
 
+    <script>
+        $(document).ready( function () {
+        $('#users').DataTable();
+        } );
+    </script>
+    
 @endsection
