@@ -54,7 +54,7 @@ Route::group(['middleware' => 'usuarioAdmin'], function () {
 
     Route::get('/porcentajeuso','AdministradorController@porcentajeuso')->name('porcentajeuso');
 
-//});
+});
 
 
 
