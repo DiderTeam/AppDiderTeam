@@ -17,10 +17,21 @@
                     <form class="bd-example">
                         
                         <fieldset>
+                          </p>
+                          <p>
+                            <label for="select">Selecione el tipo de deporte</label>
+                            <select id="select">
+                                <option value="">Selecione</option>
+                                <option value="">Selecione</option>
+                                <option value="">Tenis </option>
+                                <option value="">Futsal</option>
+                            </select>
+                          </p>
 
                           <p>
                             <label for="select">Selecione un complejo deportivo</label>
                             <select id="select">
+                                <option value="">Selecione</option>
                                 <option value="">Selecione</option>
                                 <option value="">Gimnacio CC </option>
                                 <option value="">Estadio Español</option>

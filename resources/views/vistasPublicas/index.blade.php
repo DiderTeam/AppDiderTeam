@@ -41,11 +41,11 @@
             <div class="carousel-item active">
               <img class="d-block w-100" src="http://www.pucv.cl/uuaa/site/artic/20150825/imag/foto_0000000120150825163228.jpg" alt="First slide">
             </div>
-            <!--
+            
             <div class="carousel-item">
-              <img class="d-block w-100" src="..." alt="Second slide">
+              <img class="d-block w-100" src="https://www.google.cl/url?sa=i&source=images&cd=&cad=rja&uact=8&ved=2ahUKEwjlt6Xw1OHeAhUKIpAKHT7SBC0QjRx6BAgBEAU&url=http%3A%2F%2Fsigimindep.cl%2Fnoticias%2F817&psig=AOvVaw1nJbNG9YzDwdV_q0quXkmO&ust=1542758239954571" alt="Second slide">
             </div>
-            -->
+          
           </div>
           <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
