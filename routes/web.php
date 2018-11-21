@@ -22,12 +22,10 @@ Route::view('/UbicaionC','vistasPublicas.UbicacionC')->name('ubicacion');
 /*------------------------ Vistas dinamicas Delegados----------------------------------*/
 
 Route::group(['middleware' => 'auth'], function () {
-
-    //Route::resource('/ComplejosDeportivos','ComplejosDeportivosController');
+    
+  //  Route::get('/ComplejosDeportivos','ComplejoDeportivoController@index');
 
     Route::get('/HistorialReservas','HomeController@HistorialReservas')->name('HistorialReservas');
-
-    Route::get('/ComplejosDeportivos', 'Complejodepot@index')->name('ComplejosDeportivos');
 
     Route::get('/home', 'HomeController@index')->name('home'); // vista reserva delegado
 
