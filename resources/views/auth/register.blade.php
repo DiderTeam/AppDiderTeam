@@ -26,6 +26,20 @@
                         </div>
 
                         <div class="form-group row">
+                            <label for="rut" class="col-md-4 col-form-label text-md-right">{{ __('Rut') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="rut" type="text" class="form-control{{ $errors->has('rut') ? ' is-invalid' : '' }}" name="rut" value="{{ old('rut') }}" required>
+
+                                @if ($errors->has('rut'))
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $errors->first('rut') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
                             <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
 
                             <div class="col-md-6">

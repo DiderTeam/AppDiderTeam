@@ -12,10 +12,10 @@
                         @csrf
 
                         <div class="form-group row">
-                            <label for="email" class="col-sm-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
+                            <label for="rut" class="col-sm-4 col-form-label text-md-right">{{ __('Rut') }}</label>
 
                             <div class="col-md-6">
-                                <input id="email" type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}" required autofocus>
+                                <input id="rut" type="text" class="form-control{{ $errors->has('rut') ? ' is-invalid' : '' }}" name="rut" value="{{ old('rut') }}" required autofocus>
 
                                 @if ($errors->has('email'))
                                     <span class="invalid-feedback" role="alert">
@@ -24,6 +24,7 @@
                                 @endif
                             </div>
                         </div>
+
 
                         <div class="form-group row">
                             <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
@@ -58,7 +59,7 @@
                                 </button>
 
                                 <a class="btn btn-link" href="{{ route('password.request') }}">
-                                    {{ __('Forgot Your Password?') }}
+                                    {{ __('Olvidaste tu contraseña?') }}
                                 </a>
                             </div>
                         </div>

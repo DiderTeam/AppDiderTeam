@@ -36,4 +36,13 @@ class LoginController extends Controller
     {
         $this->middleware('guest')->except('logout');
     }
+
+    /*public function rut()
+    {
+        $loginType = request()->input('rut');
+        $this->rut = filter_var($loginType, FILTER_VALIDATE_EMAIL) ? 'email' : 'rut';
+        request()->merge([$this->rut => $loginType]);
+
+        return property_exists($this, 'rut') ? $this->rut : 'email';
+     }*/
 }
