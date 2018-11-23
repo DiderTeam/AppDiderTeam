@@ -223,5 +223,28 @@ return [
         'View' => Illuminate\Support\Facades\View::class,
 
     ],
+    'providers' => [
+ 
+		// ...
+ 
+        Illuminate\Validation\ValidationServiceProvider::class,
+        Illuminate\View\ViewServiceProvider::class,
+        Illuminate\Html\HtmlServiceProvider::class,
+ 
+		// ...
+ 
+    ],
+ 
+// ...
+ 
+	'aliases' => [
+ 
+		// ...
+ 
+	    'Validator' => Illuminate\Support\Facades\Validator::class,
+	    'View'      => Illuminate\Support\Facades\View::class,
+	    'Form'      => Illuminate\Html\FormFacade::class,
+ 
+	],
 
 ];

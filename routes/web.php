@@ -43,9 +43,24 @@ Route::get('/gestiondelegado/modificardelegado','AdministradorController@modific
 Route::get('/gestiondelegado/eliminardelegado','AdministradorController@eliminardelegado')->name('eliminardelegado');
 Route::get('/gestioninformacion/agregarreglamento','AdministradorController@informacion')->name('agregarreglamento');
 Route::get('/gestioninformacion/modificarreglamento','AdministradorController@informacion')->name('modificarreglamento');
-
+Route::get('/creardelegado','AdministradorController@creardelegado')->name('creardelegado');
 // segun el otro
-Route::post('/perfiladministrador/gestiondelegados', 'adminController@agregardelegado')->name('admin.agregardelegado');
+Route::get('adding_to_table', function()
+{
+    return View::make('creardelegado');
+});
+
+Route::post('adding_to_table', function()
+{
+    DB::table('user_info')->insert(
+        array(
+            
+              "email" => Input::get("email"),
+              "name" => Input::get("name"),
+              "password" => Input::get("password"),
+        )
+    );
+});
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');

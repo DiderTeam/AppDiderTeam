@@ -33,15 +33,7 @@
             <li><a href="{{ route('eliminarcancha')}}">Eliminar canchas</a></li>
           </ul>
         </li>
-    
-        <li class="dropdown">
-          <a class="icon-user" data-toggle="dropdown" href="#">Gestión de delegados <span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            <li><a href="{{ route('agregardelegado')}}">Agregar delegado</a></li>
-            <li><a href="{{ route('modificardelegado')}}">Modificar delegado</a></li>
-            <li><a href="{{ route('eliminardelegado')}}">Eliminar delegados</a></li>
-          </ul>
-        </li>
+        <li class="active"><a href="{{ route('creardelegado')}}">Lista delegados</a></li>
         
         <li class="dropdown">
           <a class="icon-doc-text-inv" data-toggle="dropdown" href="#">Gestión de información <span class="caret"></span></a>

@@ -12,7 +12,10 @@ class AdministradorController extends Controller
         return view('vistaAdministrador.admin');
     }
 
-
+    public function creardelegado()
+    {
+        return view('vistaAdministrador.creardelegado');
+    }
     public function delegado()
     {
         return view('vistaAdministrador.gestiondelegado');
@@ -45,18 +48,8 @@ class AdministradorController extends Controller
      {
          return view('vistaAdministrador.eliminarcancha');
      }
-     public function agregardelegado()
-     {
-         return view('vistaAdministrador.agregardelegado');
-     }
-     public function modificardelegado()
-     {
-         return view('vistaAdministrador.modificardelegado');
-     }  
-     public function eliminardelegado()
-     {
-         return view('vistaAdministrador.eliminardelegado');
-     }
+   
+  
      public function agregarreglamento()
      {
          return view('vistaAdministrador.agregarreglamento');
