@@ -11,7 +11,7 @@ class Cancha extends Model
     protected $fillable = ['nombre','disponible'];
 
     public function ComplejoDeportivo(){
-        return $this->belongsTo(Canchas::class);
+        return $this->belongsTo('App\ComplejoDeportivo');
     }
 
 }

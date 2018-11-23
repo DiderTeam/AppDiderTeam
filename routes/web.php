@@ -29,6 +29,8 @@ Route::group(['middleware' => 'auth'], function () {
 
     Route::get('/home', 'HomeController@index')->name('home'); // vista reserva delegado
 
+    Route::get('complejoDeportivo/{complejoDeportivo}/Cancha', 'ComplejoDeportivoController@getCanchas');
+
     Route::get('/infoDelegado','HomeController@infoDelegado')->name('infoDelegado');
 
    
@@ -39,7 +41,7 @@ Route::group(['middleware' => 'auth'], function () {
 /*------------------------ Vistas dinamicas Administrador----------------------------------*/
 
 Route::group(['middleware' => 'usuarioAdmin'], function () {
-    
+
     Route::get('/ComplejosDeportivos','ComplejoDeportivoController@index');
 
     Route::get('/Admin','HomeController@VistaAdmin')->name('VistaAdmin');

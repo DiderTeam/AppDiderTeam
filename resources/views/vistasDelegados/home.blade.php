@@ -20,8 +20,8 @@
                     @endif          
                     <form class="bd-example">
                         
-                      <fieldset> 
-                      <label for="select">Selecione una cancha</label>
+                    <fieldset> 
+                      <label for="select">Selecione una complejo deportivo</label>
                        <div class="form-group">
                           <select class="form-control">
                             @foreach($complejosDeportivos as $complejoDeportivo)
@@ -30,16 +30,27 @@
                           </select>
                         </div>
                         
-                          <p>
-                            <label for="select">Selecione una cancha</label>
-                            <select id="select">
-                                <option value="">Cancha N°1</option>
-                                <option value="">Cancha N°2</option>
-                                <option value="">Cancha N°3</option>
-                            </select>
-                          </p>
-                      
-                          <p>
+                        
+                        </div>
+                                <div class="col-md-4">
+                                    <select name="state" class="form-control">
+                                     <option>--State--</option>
+
+                                 </select>
+                             </div><div class="col-md-2"><span id="loader"><i class="fa fa-spinner fa-3x fa-spin"></i></span></div>
+
+                         </div>
+                     </form>
+                 </div>
+
+                 <div class="panel-footer">- By: [Your Name]</div>
+             </div>
+         </div>
+     </div>
+ </div>
+ <script src="{{ asset('js/app.js') }}"></script>
+ <script src="{{ asset('js/custom.js') }}"></script>
+</body>
                             <label for="date">Selecione el dia</label>
                             <input type="date" id="date" />
                           </p>

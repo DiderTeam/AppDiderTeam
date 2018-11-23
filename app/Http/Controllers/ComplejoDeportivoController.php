@@ -1,6 +1,7 @@
 <?php
 namespace App\Http\Controllers;
 use App\ComplejoDeportivo as ComplejoDeportivo;
+use App\Cancha as Cancha;
 use Illuminate\Http\Request;
 class ComplejoDeportivoController extends Controller
 {
@@ -29,6 +30,10 @@ class ComplejoDeportivoController extends Controller
     {
         $complejoDeportivo  = ComplejoDeportivo::all();
         return View('vistasDelegados.home',compact('complejosDeportivos'));
+    }
+    public function getCanchas(ComplejoDeportivo $complejoDeportivo)
+    {
+        return $complejoDeportivo->Cancha()->select('id', 'nombre')->get();
     }
     /**
      * Show the form for creating a new resource.
