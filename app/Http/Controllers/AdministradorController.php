@@ -12,9 +12,9 @@ class AdministradorController extends Controller
         return view('vistaAdministrador.admin');
     }
 
-    public function creardelegado()
+    public function listadelegado()
     {
-        return view('vistaAdministrador.creardelegado');
+        return view('vistaAdministrador.listadelegado');
     }
     public function delegado()
     {
@@ -60,6 +60,11 @@ class AdministradorController extends Controller
          return view('vistaAdministrador.modificarreglamento');
      }
 
+public function index()
+{
+    $user= User::All();
+    return view ('listadelegado',compact('users'));
+}
 
     }
 

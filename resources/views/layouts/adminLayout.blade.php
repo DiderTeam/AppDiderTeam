@@ -33,7 +33,7 @@
             <li><a href="{{ route('eliminarcancha')}}">Eliminar canchas</a></li>
           </ul>
         </li>
-        <li class="active"><a href="{{ route('creardelegado')}}">Lista delegados</a></li>
+        <li class="active"><a href="{{ route('listadelegado')}}">Lista delegados</a></li>
         
         <li class="dropdown">
           <a class="icon-doc-text-inv" data-toggle="dropdown" href="#">Gestión de información <span class="caret"></span></a>

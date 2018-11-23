@@ -31,7 +31,7 @@ Route::view('/welcome','welcome')->name('Laravel');
 
 
 Route::get('/perfiladministrador','AdministradorController@Perfil')->name('perfiladministrador');
-Route::get('/gestiondelegado','AdministradorController@delegado')->name('gestiondelegado');
+Route::get('/listadelegado','AdministradorController@listadelegado')->name('listadelegado');
 Route::get('/gestioncancha','AdministradorController@canchas')->name('gestioncancha');
 Route::get('/gestioninformacion','AdministradorController@informacion')->name('gestioninformacion');
 Route::get('/porcentajeuso','AdministradorController@porcentajeuso')->name('porcentajeuso');
@@ -43,24 +43,9 @@ Route::get('/gestiondelegado/modificardelegado','AdministradorController@modific
 Route::get('/gestiondelegado/eliminardelegado','AdministradorController@eliminardelegado')->name('eliminardelegado');
 Route::get('/gestioninformacion/agregarreglamento','AdministradorController@informacion')->name('agregarreglamento');
 Route::get('/gestioninformacion/modificarreglamento','AdministradorController@informacion')->name('modificarreglamento');
-Route::get('/creardelegado','AdministradorController@creardelegado')->name('creardelegado');
-// segun el otro
-Route::get('adding_to_table', function()
-{
-    return View::make('creardelegado');
-});
 
-Route::post('adding_to_table', function()
+Route::get('/',function()
 {
-    DB::table('user_info')->insert(
-        array(
-            
-              "email" => Input::get("email"),
-              "name" => Input::get("name"),
-              "password" => Input::get("password"),
-        )
-    );
+    $admin =app\user::All();
+    return view('listadelegado', compact('admin'));
 });
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
