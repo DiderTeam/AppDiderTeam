@@ -27,6 +27,7 @@ class ComplejoDeportivoController extends Controller
         echo("hola mundo");
         return View('vistasDelegados.home',compact('complejosDeportivos'));
     }
+
     public function llenadoComplejo()
     {
         $complejoDeportivo  = ComplejoDeportivo::all();

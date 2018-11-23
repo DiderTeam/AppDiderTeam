@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<link rel="stylesheet" href="//cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css"> <!-- //jquery css -->
+
 <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-8">
@@ -44,13 +44,6 @@
         </div>
     </div>
     
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> <!-- //jquery js -->
-    <script src="//cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script> <!-- //datatables js jquery -->
-
-    <script>
-        $(document).ready( function () {
-        $('#users').DataTable();
-        } );
-    </script>
+    
     
 @endsection
