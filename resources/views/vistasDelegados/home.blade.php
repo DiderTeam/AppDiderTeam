@@ -24,6 +24,8 @@
                       <label for="select">Selecione una complejo deportivo</label>
                        <div class="form-group">
                           <select class="form-control">
+                          <option value="">--Seleccione un complejo deportivo--</option>
+                          <a href="{{ action('PageController@logout') }}"></a>
                             @foreach($complejosDeportivos as $complejoDeportivo)
                               <option value="{{ $complejoDeportivo ['id'] }}">{{ $complejoDeportivo ['nombre'] }}</option>
                             @endforeach
