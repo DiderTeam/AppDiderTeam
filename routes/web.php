@@ -23,7 +23,7 @@ Route::view('/UbicaionC','vistasPublicas.UbicacionC')->name('ubicacion');
 
 Route::group(['middleware' => 'auth'], function () {
     
-  //  Route::get('/ComplejosDeportivos','ComplejoDeportivoController@index');
+    Route::get('/ComplejosDeportivos','ComplejoDeportivoController@index');
 
     Route::get('/HistorialReservas','HomeController@HistorialReservas')->name('HistorialReservas');
 
@@ -39,6 +39,8 @@ Route::group(['middleware' => 'auth'], function () {
 /*------------------------ Vistas dinamicas Administrador----------------------------------*/
 
 Route::group(['middleware' => 'usuarioAdmin'], function () {
+    
+    Route::get('/ComplejosDeportivos','ComplejoDeportivoController@index');
 
     Route::get('/Admin','HomeController@VistaAdmin')->name('VistaAdmin');
 

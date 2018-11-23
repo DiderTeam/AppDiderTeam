@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\User as User;
+use App\ComplejoDeportivo as ComplejoDeportivo;
 
 class HomeController extends Controller
 {
@@ -23,7 +24,8 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('vistasDelegados.home');
+        $complejosDeportivos = ComplejoDeportivo::all();
+        return view('vistasDelegados.home',compact('complejosDeportivos'));
     }
     public function infoDelegado()
     {

@@ -11,9 +11,7 @@ class ComplejoDeportivoController extends Controller
      * @return \Illuminate\Http\Response
      */
     
-     public function select(){
-        $data=DB::table('complejos_deportivos')->get();
-        return view('vistasDelegados.home')->with('data',$data);
+     public function select(){        
      }
 
      public function postSelect(Request $request)
