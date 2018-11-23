@@ -16,7 +16,6 @@ class usercontroller extends Controller
     /**
      * @var UserRepository
      */
-    protected $users;
 
     /**
      * UserController constructor.
@@ -36,7 +35,7 @@ class usercontroller extends Controller
      * @return \Illuminate\View\View
      */
     public function users(){
-        $Users = User::all();
+        $users = User::all();
         return view('listadelegado', compact('users'));
     }
     

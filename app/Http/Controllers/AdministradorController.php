@@ -1,6 +1,7 @@
 <?php
 
 namespace  App\Http\Controllers;
+use App\User as User;
 
 class AdministradorController extends Controller
 {
@@ -14,7 +15,8 @@ class AdministradorController extends Controller
 
     public function listadelegado()
     {
-        return view('vistaAdministrador.listadelegado');
+        $users = User::all();
+        return view('vistaAdministrador.listadelegado',compact('users'));
     }
     public function delegado()
     {
