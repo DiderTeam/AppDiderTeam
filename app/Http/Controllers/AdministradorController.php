@@ -60,11 +60,8 @@ class AdministradorController extends Controller
          return view('vistaAdministrador.modificarreglamento');
      }
 
-public function index()
-{
-    $user= User::All();
-    return view ('listadelegado',compact('users'));
-}
+
+ 
 
     }
 

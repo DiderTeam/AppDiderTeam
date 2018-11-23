@@ -1,12 +1,12 @@
 
 <?php
 
-namespace App\Http\Controllers\User;
+namespace App\Http\Controllers\Usercontroller;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Repositories\Contracts\UserRepository;
-use App\User;
+use App\User as User;
 use App\Proyecto;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
@@ -35,12 +35,9 @@ class usercontroller extends Controller
      *
      * @return \Illuminate\View\View
      */
-
+    public function users(){
+        $Users = User::all();
+        return view('listadelegado', compact('users'));
+    }
     
-
-     public function store()
-     {
-
-        return "aki esto"
-     }
     }

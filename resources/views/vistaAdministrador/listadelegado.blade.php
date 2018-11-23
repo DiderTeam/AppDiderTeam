@@ -4,26 +4,24 @@
 <h1> Lista de los delegados  </h1>
 
 <br></br>
+<table class="table" id="User">
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Nombre</th>
+                                    <th>Email</th>
+                                </tr>
+                            </thead>
+                            {{--  --}}
+                            <tbody>
+                                @foreach($User as $user)
+                                    <tr>
+                                        <td>{{ $user->id }}</td>
+                                        <td>{{ $user->name }}</td>
+                                        <td>{{ $user->email }}</td>
+                                    </tr>
+                                @endforeach
+                            </tbody>    
+                        </table>
 
-<table class='table' id="users">
-    <thead>
-        <thead>
-        <th>Nombre</th>
-        <th>Correo</th>
-        <th>Id</th>
-        </thead)
-        @foreach($admin as $lino)
-        <tbody>
-        <td>{{$lino->name}}</td>
-        <td>{{$lino->email}}</td>
-        <td>{{$lino->id}}</td>
-        </tbody>
-        @endforeach
-        </table>
-
-<script>
-$(document).ready(function(){
-    $('$users'.Datatable();)
-});
-</script>
 @endsection

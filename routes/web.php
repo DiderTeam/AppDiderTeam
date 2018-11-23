@@ -44,8 +44,3 @@ Route::get('/gestiondelegado/eliminardelegado','AdministradorController@eliminar
 Route::get('/gestioninformacion/agregarreglamento','AdministradorController@informacion')->name('agregarreglamento');
 Route::get('/gestioninformacion/modificarreglamento','AdministradorController@informacion')->name('modificarreglamento');
 
-Route::get('/',function()
-{
-    $admin =app\user::All();
-    return view('listadelegado', compact('admin'));
-});
