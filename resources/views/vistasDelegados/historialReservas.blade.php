@@ -1,7 +1,6 @@
 @extends('layouts.app')
 
 @section('content')
-
 <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-8">
@@ -18,8 +17,16 @@
                         
                         <h1>Historial de reservas</h1>
                         <br>
-                 
-                        <table class="table" id="users">
+                        <!--
+                        <div class="list-group">
+                            <a href="#" class="list-group-item ">Cras justo odio</a>
+                            <a href="#" class="list-group-item">Dapibus ac facilisis in</a>
+                            <a href="#" class="list-group-item">Morbi leo risus</a>
+                            <a href="#" class="list-group-item">Porta ac consectetur ac</a>
+                            <a href="#" class="list-group-item">Vestibulum at eros</a>
+                        </div>
+                        -->
+                        <table class="table">
                             <thead>
                                 <tr>
                                     <th>ID</th>
@@ -27,7 +34,7 @@
                                     <th>Email</th>
                                 </tr>
                             </thead>
-                            {{--  --}}
+                            {{-- --}}
                             <tbody>
                                 @foreach($users as $user)
                                     <tr>
@@ -36,14 +43,17 @@
                                         <td>{{ $user->email }}</td>
                                     </tr>
                                 @endforeach
-                            </tbody>    
+                            </tbody>
+                            
                         </table>
+  
+                             
                     </div>
                 </div>
+                
+    
             </div>
         </div>
     </div>
-    
-    
-    
+
 @endsection

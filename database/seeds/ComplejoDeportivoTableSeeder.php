@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Seeder;
 
-class ComplejoDeportivoSeeder extends Seeder
+class ComplejoDeportivoTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.

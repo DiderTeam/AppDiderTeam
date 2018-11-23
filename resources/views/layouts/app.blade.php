@@ -18,8 +18,6 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-    <link rel="stylesheet" href="//cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css"> <!-- //jquery css -->
-
 </head>
 <body>
     <div id="app">
@@ -88,16 +86,5 @@
             @yield('content')
         </main>
     </div>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> <!-- //jquery js -->
-    <script src="//cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script> <!-- //datatables js jquery -->
-
-    <script>
-        $(document).ready( function () {
-        $('#users').DataTable();
-        } );
-    </script>
-    
 </body>
-
 </html>
