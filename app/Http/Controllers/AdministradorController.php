@@ -2,6 +2,10 @@
 
 namespace  App\Http\Controllers;
 use App\User as User;
+use Illuminate\Http\Request;
+use App\Http\Requests;
+use Illuminate\Support\Facades\Hash;
+
 
 class AdministradorController extends Controller
 {
@@ -23,6 +27,48 @@ class AdministradorController extends Controller
         return view('vistaAdministrador.gestiondelegado');
     }
 
+    public function creardelegado()
+    {
+        return view('vistaAdministrador.creardelegado');
+    }
+
+    public function agregardelegado(Request $request)
+    {
+        
+        
+       User::create([
+
+          'name' => $request->input('name'),
+            'email' => $request->input('email'),
+            'password' => Hash::make($request->input(['password']))
+
+        ]);
+       
+        return redirect()->back()->withSuccess('Delegado Agregado');
+    }
+    
+    public function actualizardelegado(request $request )
+    {
+       // dd($request->get("id"));
+        $users = User::find($request->get("id"));
+        $users->name =$request->name;
+        $users->email =$request->email;
+        $users->password =$request->password;
+        $users->save();
+       return view("vistaAdministrador.editardelegado")->with('users', $users);
+
+    }
+    
+    
+    
+    public function editardelegado()
+    {
+        return view('vistaAdministrador.editardelegado');
+    }
+    public function eliminardelegado()
+    {
+        return view('vistaAdministrador.eliminardelegado');
+    }
     public function canchas()
     {
         return view('vistaAdministrador.gestioncanchas');
@@ -66,6 +112,5 @@ class AdministradorController extends Controller
  
 
     }
-
 
     
