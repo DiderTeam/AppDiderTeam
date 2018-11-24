@@ -1,8 +1,5 @@
 @extends('layouts.app')
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
@@ -25,7 +22,7 @@
                        <div class="form-group">
                           <select class="form-control">
                           <option value="">--Seleccione un complejo deportivo--</option>
-                          <a href="{{ action('PageController@logout') }}"></a>
+                          {{--<a href="{{ action('PageController@logout') }}"></a> --}}
                             @foreach($complejosDeportivos as $complejoDeportivo)
                               <option value="{{ $complejoDeportivo ['id'] }}">{{ $complejoDeportivo ['nombre'] }}</option>
                             @endforeach
