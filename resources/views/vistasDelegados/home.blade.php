@@ -44,13 +44,9 @@
                  </div>
 
                  <div class="panel-footer">- By: [Your Name]</div>
-             </div>
-         </div>
-     </div>
- </div>
- <script src="{{ asset('js/app.js') }}"></script>
- <script src="{{ asset('js/custom.js') }}"></script>
-</body>
+
+ 
+
                             <label for="date">Selecione el dia</label>
                             <input type="date" id="date" />
                           </p>
