@@ -21,8 +21,6 @@
                         <tr>{{$infoDelegado->first()->nombre}}</tr>
                         <tr>{{$infoDelegado->first()->telefono}}</tr>
                         <tr>{{$infoDelegado->first()->rol}}</tr>
-                        
-
                     </div>
                 </div>
                 
