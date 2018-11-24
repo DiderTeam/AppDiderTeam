@@ -13,4 +13,5 @@ class ComplejoDeportivo extends Model
     public function Cancha(){
         return $this->hasMany('App\Cancha');
     }
+    
 }

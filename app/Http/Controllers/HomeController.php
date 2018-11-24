@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use DB;
 use App\User as User;
 use App\ComplejoDeportivo as ComplejoDeportivo;
 use App\Cancha as Cancha;
@@ -26,8 +27,13 @@ class HomeController extends Controller
     public function index()
     {
         $complejosDeportivos = ComplejoDeportivo::all();
-        $canchas = Cancha::all();
-        return view('vistasDelegados.home',compact('complejosDeportivos','canchas'));
+        return view('vistasDelegados.home',compact('complejosDeportivos'));
+    }
+    public function canchas()
+    {
+        $idComplejoDeportivo = Input::get('idComplejoDeportivo');
+        $canchas = Cancha::where('idComplejoDeportivo','=',$idComplejoDeportivo)->get();
+        return response()->json($canchas);
     }
     public function infoDelegado()
     {
