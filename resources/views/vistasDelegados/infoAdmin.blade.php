@@ -16,7 +16,13 @@
                         @endif
                         
                         <h1>Info de delegado</h1>
-                             
+                        <h3>Mostrar Info del Delegado</h3>
+                        
+                        <tr>{{$infoDelegado->first()->nombre}}</tr>
+                        <tr>{{$infoDelegado->first()->telefono}}</tr>
+                        <tr>{{$infoDelegado->first()->rol}}</tr>
+                        
+
                     </div>
                 </div>
                 

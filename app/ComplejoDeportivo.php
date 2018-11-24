@@ -14,3 +14,4 @@ class ComplejoDeportivo extends Model
         return $this->hasMany('App\Cancha');
     }
 }
+
