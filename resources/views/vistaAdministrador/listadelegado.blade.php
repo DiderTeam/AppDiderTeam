@@ -27,7 +27,7 @@
                                         <td>{{ $user->name }}</td>
                                         <td>{{ $user->email }}</td>
                                         <td>
-                                            <a href="{{ route('editardelegado',"id=$user->id")}}"><span class="oi oi-pencil"></span></a>
+                                            <a href="{{ route('vistaAdministrador.editardelegado',"id=$user->id")}}"><span class="oi oi-pencil"></span></a>
                                             <a href="{{ route('eliminardelegado',"id=$user->id")}}"><span class="oi oi-delete"></span></a>
 
 

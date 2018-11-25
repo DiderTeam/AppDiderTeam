@@ -10,17 +10,17 @@
                 @endif
                 <div class="card">
 
-                    <div class="card-header">Editar Delegado</div>
-
+                    <div class="card-header">Editar Delegado          {{ $users->name }}</div>
+<br>
                     <div class="card-body">
-                        <form class="form-group" method="POST" action="{{ route("editardelegado","id=$user->id") }}">
+                        <form class="form-group" method="POST" action="{{ route("vistaAdministrador.actualizardelegado","id=$users->id") }}">
                             @csrf
 
                             <div class="form-group row">
                                 <label for="name" class="col-md-3 col-form-label  text-md-right">Nombre:</label>
 
                                 <div class="col-md-9">
-                                    <input required type="text" name="nombre" class="form-control" value="{{ $user->nombre }}">
+                                    <input required type="text" name="name" class="form-control" value="{{ $users->name }}">
                                 </div>
                             </div>
                             <div class="form-group row">
@@ -43,7 +43,8 @@
                                     <button  type="submit" class="btn btn-primary">
                                         Editar
                                     </button>
-
+                                    </button>
+                                    <a  href="{{ route('listadelegado')}}"class="btn btn-link">Regresar al listado de delegados </a>
                                 </div>
                             </div>
                         </form>

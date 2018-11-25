@@ -38,8 +38,7 @@ Route::get('/porcentajeuso','AdministradorController@porcentajeuso')->name('porc
 Route::get('/perfiladministrador/agregarcancha','AdministradorController@agregarcancha')->name('agregarcancha');
 Route::get('/perfiladministrador/modificarcancha','AdministradorController@agregarcancha')->name('modificarcancha');
 Route::get('/perfiladministrador/eliminarcancha','AdministradorController@agregarcancha')->name('eliminarcancha');
-Route::get('/gestiondelegado/creardelegado','AdministradorController@creardelegado')->name('creardelegado');
-Route::get('/gestiondelegado/editardelegado','AdministradorController@editardelegado')->name('editardelegado');
+
 Route::get('/gestiondelegado/eliminardelegado','AdministradorController@eliminardelegado')->name('eliminardelegado');
 Route::get('/gestiondelegado/modificardelegado','AdministradorController@modificardelegado')->name('modificardelegado');
 Route::get('/gestiondelegado/eliminardelegado','AdministradorController@eliminardelegado')->name('eliminardelegado');
@@ -47,5 +46,8 @@ Route::get('/gestioninformacion/agregarreglamento','AdministradorController@info
 Route::get('/gestioninformacion/modificarreglamento','AdministradorController@informacion')->name('modificarreglamento');
 
 
+//LO miooo
+Route::get('/gestiondelegado/creardelegado','AdministradorController@creardelegado')->name('creardelegado');
+Route::get('editardelegado','AdministradorController@actualizardelegado')->name('vistaAdministrador.editardelegado');
 Route::post(('/createdelegado') , 'AdministradorController@agregardelegado')->name('createdelegado');
-Route::get(('/editardelegado'), 'AdministradorController@actualizardelegado')->name('editardelegado');
+Route::post(('editardelegado'),'AdministradorController@update1')->name('vistaAdministrador.actualizardelegado');

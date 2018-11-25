@@ -49,22 +49,29 @@ class AdministradorController extends Controller
     
     public function actualizardelegado(request $request )
     {
-       // dd($request->get("id"));
+      // dd($request->get("email"));
         $users = User::find($request->get("id"));
-        $users->name =$request->name;
-        $users->email =$request->email;
-        $users->password =$request->password;
+        //$users->name =$request->name;
+        //$users->email =$request->email;
+        //$users->password =$request->password;
+        //$users->save();
+return view("vistaAdministrador.editardelegado")->with('users', $users);
+
+    }
+    
+    public function update1(Request $request)
+    {
+        //dd($request->get("name"));
+        $users = User::find($request->get("id"));
+        $users->name = $request->get("name");
+        $users->password = $request->get("password");
+        $users->email = $request->get("email");
         $users->save();
-       return view("vistaAdministrador.editardelegado")->with('users', $users);
+        return redirect()->back()->withSuccess('Delegado Actualizado');
 
     }
     
     
-    
-    public function editardelegado()
-    {
-        return view('vistaAdministrador.editardelegado');
-    }
     public function eliminardelegado()
     {
         return view('vistaAdministrador.eliminardelegado');
