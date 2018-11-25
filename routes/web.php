@@ -1,10 +1,5 @@
 <?php
 
-
-Route::get('/', function () {
-    return view('welcome');
-});
-
 Auth::routes();
 
 /*------------------------ Vistas estaticas y publicas ----------------------------------*/
@@ -22,22 +17,15 @@ Route::view('/UbicaionC','vistasPublicas.UbicacionC')->name('ubicacion');
 /*------------------------ Vistas dinamicas Delegados----------------------------------*/
 
 Route::group(['middleware' => 'auth'], function () {
-    
-    //Route::get('/ComplejosDeportivos','ComplejoDeportivoController@index');
 
     Route::get('/HistorialReservas','HomeController@HistorialReservas')->name('HistorialReservas');
 
     Route::get('/home', 'HomeController@index')->name('home'); // vista reserva delegado
 
-    //Route::get('complejoDeportivo/{complejoDeportivo}/Cancha', 'ComplejoDeportivoController@getCanchas');
-
     Route::get('/infoDelegado','HomeController@infoDelegado')->name('infoDelegado');
-
-   
 
 });
 
-    
 /*------------------------ Vistas dinamicas Administrador----------------------------------*/
 
 Route::group(['middleware' => 'usuarioAdmin'], function () {
@@ -58,6 +46,9 @@ Route::group(['middleware' => 'usuarioAdmin'], function () {
 
 });
 
-
-
-//Route::view('/welcome','welcome')->name('Laravel'); //vista laravel default
+/*
+Route::get('/', function () {
+    return view('welcome');
+});
+Route::view('/welcome','welcome')->name('Laravel'); //vista laravel default
+*/

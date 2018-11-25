@@ -17,15 +17,6 @@
                         
                         <h1>Historial de reservas</h1>
                         <br>
-                        <!--
-                        <div class="list-group">
-                            <a href="#" class="list-group-item ">Cras justo odio</a>
-                            <a href="#" class="list-group-item">Dapibus ac facilisis in</a>
-                            <a href="#" class="list-group-item">Morbi leo risus</a>
-                            <a href="#" class="list-group-item">Porta ac consectetur ac</a>
-                            <a href="#" class="list-group-item">Vestibulum at eros</a>
-                        </div>
-                        -->
                         <table class="table">
                             <thead>
                                 <tr>
@@ -44,10 +35,8 @@
                                     </tr>
                                 @endforeach
                             </tbody>
-                            
                         </table>
-  
-                             
+                           
                     </div>
                 </div>
                 

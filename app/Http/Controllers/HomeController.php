@@ -34,8 +34,8 @@ class HomeController extends Controller
     public function infoDelegado()
     {
         $idActual = auth()->user()->id;
-        $infoDelegado = DatosUsuario::where('idUser','=',$idActual)->get();
-        return view('vistasDelegados.infoAdmin',compact('infoDelegado'));
+        $delegadoActual = DatosUsuario::where('idUser','=',$idActual)->get();
+        return view('vistasDelegados.infoDelegado',compact('delegadoActual'));
     }
     public function HistorialReservas()
     {
