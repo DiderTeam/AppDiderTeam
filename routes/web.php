@@ -50,4 +50,7 @@ Route::get('/gestioninformacion/modificarreglamento','AdministradorController@in
 Route::get('/gestiondelegado/creardelegado','AdministradorController@creardelegado')->name('creardelegado');
 Route::get('editardelegado','AdministradorController@actualizardelegado')->name('vistaAdministrador.editardelegado');
 Route::post(('/createdelegado') , 'AdministradorController@agregardelegado')->name('createdelegado');
-Route::post(('editardelegado'),'AdministradorController@update1')->name('vistaAdministrador.actualizardelegado');
+Route::post(('/editardelegado'),'AdministradorController@update1')->name('vistaAdministrador.actualizardelegado');
+
+//eliminar
+Route::get(('listadelegado/{id}'), 'AdministradorController@destroye1')->name('delete.eliminardelegado');

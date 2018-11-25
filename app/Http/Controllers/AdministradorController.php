@@ -5,6 +5,7 @@ use App\User as User;
 use Illuminate\Http\Request;
 use App\Http\Requests;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Session;
 
 
 class AdministradorController extends Controller
@@ -70,7 +71,22 @@ return view("vistaAdministrador.editardelegado")->with('users', $users);
         return redirect()->back()->withSuccess('Delegado Actualizado');
 
     }
-    
+    public function destroye1($id)
+    {
+        $users=User::find($id);
+        User::destroy($id);
+       // Session::flash('message','El delegado fue eliminado');
+      
+        return redirect()->back()->withSuccess('Delegado Eliminado');
+        //date_default_timezone_set('America/Santiago');
+        //$users = User::find($id);
+
+
+       // $user=User::where('id', $id)->update(['active'=>'0']);
+
+       // return redirect()->back()->withSuccess('Colaborador Borrado');
+
+    }
     
     public function eliminardelegado()
     {
