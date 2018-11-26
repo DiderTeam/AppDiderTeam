@@ -11,28 +11,14 @@
                               <option value="{{ $complejoDeportivo ['id'] }}">{{ $complejoDeportivo ['nombre'] }}</option>
                             @endforeach
                           </select>
-<<<<<<< HEAD
-                        </div>                        
-=======
                         </div>
                         
-                        
-                        </div>
-                                <div class="col-md-4">
-                                    <select name="state" class="form-control">
-                                     <option>--State--</option>
-
-                                 </select>
-                             </div><div class="col-md-2"><span id="loader"><i class="fa fa-spinner fa-3x fa-spin"></i></span></div>
-
-                         </div>
-                     </form>
-                 </div>
-
-                 <div class="panel-footer">- By: [Your Name]</div>
-
- 
-
+                        <div class="form-group">
+                          <select class="form-control" name="canchas" id="canchas">
+                            <option value="0" disable="true" selected="true">=== Canchas ===</option>
+                          </select>
+                        </div>                                           
+        
                             <label for="date">Selecione el dia</label>
                             <input type="date" id="date" />
                           </p>
@@ -71,13 +57,7 @@
                           </p>
                       
                         </fieldset>
->>>>>>> e63e22bd2ce561ff6f2d24905da397113d7dbe37
                         
-                        <div class="form-group">
-                          <select class="form-control" name="canchas" id="canchas">
-                            <option value="0" disable="true" selected="true">=== Canchas ===</option>
-                          </select>
-                        </div>                                           
                         </fieldset>                        
                       </form>                    
                 </div>
@@ -87,18 +67,18 @@
 </div>
 
   <script type="text/javascript">
-          $('complejoDeportivo').change(function(e){
-            console.log(e);
-            var idComplejoDeportivo = e.target.value;
-            $.get('/home/json-canchas?idComplejoDeportivo=' + idComplejoDeportivo,function(data) {
-              console.log(data);
-              $('canchas').empty();
-              $('canchas').append('<option value="0" disable="true" selected="true">=== Canchas ===</option>');
-              
-              $.each(data, function(index, canchasObj){
-                $('canchas').append('<option value="'+ canchasObj.id +'">'+ canchasObj.name +'</option>');
-              })
-            });
-          });
-        </script>
+    $('complejoDeportivo').change(function(e){
+      console.log(e);
+      var idComplejoDeportivo = e.target.value;
+      $.get('/home/json-canchas?idComplejoDeportivo=' + idComplejoDeportivo,function(data) {
+        console.log(data);
+        $('canchas').empty();
+        $('canchas').append('<option value="0" disable="true" selected="true">=== Canchas ===</option>');
+        
+        $.each(data, function(index, canchasObj){
+          $('canchas').append('<option value="'+ canchasObj.id +'">'+ canchasObj.name +'</option>');
+        })
+      });
+    });
+  </script>
 @endsection
