@@ -31,7 +31,7 @@ Route::view('/welcome','welcome')->name('Laravel');
 
 
 Route::get('/perfiladministrador','AdministradorController@Perfil')->name('perfiladministrador');
-Route::get('/listadelegado','AdministradorController@listadelegado')->name('listadelegado');
+
 Route::get('/gestioncancha','AdministradorController@canchas')->name('gestioncancha');
 Route::get('/gestioninformacion','AdministradorController@informacion')->name('gestioninformacion');
 Route::get('/porcentajeuso','AdministradorController@porcentajeuso')->name('porcentajeuso');
@@ -51,6 +51,7 @@ Route::get('/gestiondelegado/creardelegado','AdministradorController@creardelega
 Route::get('editardelegado','AdministradorController@actualizardelegado')->name('vistaAdministrador.editardelegado');
 Route::post(('/createdelegado') , 'AdministradorController@agregardelegado')->name('createdelegado');
 Route::post(('/editardelegado'),'AdministradorController@update1')->name('vistaAdministrador.actualizardelegado');
+Route::get('/listadelegado','AdministradorController@listadelegado')->name('listadelegado');
 
 //eliminar
 Route::get(('listadelegado/{id}'), 'AdministradorController@destroye1')->name('delete.eliminardelegado');
