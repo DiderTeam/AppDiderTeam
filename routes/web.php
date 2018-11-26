@@ -27,7 +27,7 @@ Route::group(['middleware' => 'auth'], function () {
 
     Route::get('/home', 'HomeController@index')->name('home'); // vista reserva delegado
 
-    Route::get('/json-canchas','HomeController@canchas');
+    Route::get('/home/json-canchas','HomeController@canchas');
 
     Route::get('complejoDeportivo/{complejoDeportivo}/Cancha', 'ComplejoDeportivoController@getCanchas');
 
