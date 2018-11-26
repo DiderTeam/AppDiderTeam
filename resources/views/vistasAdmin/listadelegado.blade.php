@@ -1,12 +1,15 @@
 @extends('layouts.adminLayout')
 @section('content')
 
+
 <div class="d-flex justify-content-between align-items-end">
 
-<p>
-<a href="{{ route('creardelegado')}}" class="btn btn-primary">Crear un nuevo delegado</a>
-</p>
+<div class="container">
 <h1 class="pb-1"> Lista de los delegados  </h1>
+
+<p>
+<a href="{{ route('creardelegado')}}" class="btn btn-success" >Crear un nuevo delegado</a>
+</p>
 </div>
 
           @if(session('success'))
@@ -15,7 +18,7 @@
                 </div>
             @endif
  
-
+<div class="container">
 <table class="table" id="User">
                             <thead>
                                 <tr>
@@ -34,9 +37,9 @@
                                         <td>{{ $user->name }}</td>
                                         <td>{{ $user->email }}</td>
                                         <td>
-                                            <a href="{{ route('vistaAdministrador.editardelegado',"id=$user->id")}}"><span class="oi oi-pencil"></span></a>
+                                            <a href="{{ route('vistaAdministrador.editardelegado',"id=$user->id")}}" <button type="button" class="btn btn-primary">Editar</button></a>
                                             
-                                            <a href="{{ route('delete.eliminardelegado',"$user->id") }}"" onclick="return confirm('¿Seguro que deseas eliminarlo?')"><span class="oi oi-delete"></span></a> 
+                                            <a href="{{ route('delete.eliminardelegado',"$user->id") }}"" onclick="return confirm('¿Seguro que deseas eliminarlo?')" <button type="button" class="btn btn-danger">Eliminar</button></a> 
                                            
 
 
@@ -46,5 +49,10 @@
                                 @endforeach
                             </tbody>    
                         </table>
+</div>
+       
+
+</div>
+
 
 @endsection

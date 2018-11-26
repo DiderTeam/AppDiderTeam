@@ -21,11 +21,12 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>                        
       </button>
-      <a class="navbar-brand" ,class="icon-user" href="#">Perfil del Administrador</a>
+      <a class="navbar-brand" ,class="icon-user" href="{{ route('perfiladministrador')}}">Perfil del Administrador</a>
     </div>
+    
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
-        <li class="active"><a href="{{ route('perfiladministrador')}}">Home</a></li>
+      <li class="active"><a href="{{ route('listadelegado')}}">Lista delegados</a></li>
         <li class="dropdown">
           <a class="icon-soccer" data-toggle="dropdown" href="#">Gestión de canchas <span class="caret"></span></a>
           <ul class="dropdown-menu">
@@ -34,7 +35,7 @@
             <li><a href="{{ route('eliminarcancha')}}">Eliminar canchas</a></li>
           </ul>
         </li>
-        <li class="active"><a href="{{ route('listadelegado')}}">Lista delegados</a></li>
+        
         
         <li class="dropdown">
           <a class="icon-doc-text-inv" data-toggle="dropdown" href="#">Gestión de información <span class="caret"></span></a>

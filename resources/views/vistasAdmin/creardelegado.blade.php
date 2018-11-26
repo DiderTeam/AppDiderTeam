@@ -12,7 +12,7 @@
                 <div class="card">
 
                     <div class="card-header">Agregar Delegados</div>
-<br>
+                    <br>
 
                     <div class="card-body">
                         <form class="form-group" method="POST" action="{{ route('createdelegado') }}">
