@@ -15,3 +15,4 @@ class ComplejoDeportivo extends Model
     }
     
 }
+
