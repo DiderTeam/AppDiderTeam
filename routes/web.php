@@ -30,25 +30,30 @@ Route::group(['middleware' => 'auth'], function () {
 
 //Route::group(['middleware' => 'usuarioAdmin'], function () {
 
-    Route::get('/ComplejosDeportivos','ComplejoDeportivoController@index');
-
     Route::get('/perfiladministrador','AdministradorController@Perfil')->name('perfiladministrador');
 
-    Route::get('/gestiondelegado','AdministradorController@delegado')->name('gestiondelegado');
-
     Route::get('/gestioncancha','AdministradorController@canchas')->name('gestioncancha');
-
     Route::get('/gestioninformacion','AdministradorController@informacion')->name('gestioninformacion');
-
     Route::get('/porcentajeuso','AdministradorController@porcentajeuso')->name('porcentajeuso');
+    Route::get('/perfiladministrador/agregarcancha','AdministradorController@agregarcancha')->name('agregarcancha');
+    Route::get('/perfiladministrador/modificarcancha','AdministradorController@agregarcancha')->name('modificarcancha');
+    Route::get('/perfiladministrador/eliminarcancha','AdministradorController@agregarcancha')->name('eliminarcancha');
+
+    Route::get('/gestiondelegado/eliminardelegado','AdministradorController@eliminardelegado')->name('eliminardelegado');
+    Route::get('/gestiondelegado/modificardelegado','AdministradorController@modificardelegado')->name('modificardelegado');
+    Route::get('/gestiondelegado/eliminardelegado','AdministradorController@eliminardelegado')->name('eliminardelegado');
+    Route::get('/gestioninformacion/agregarreglamento','AdministradorController@informacion')->name('agregarreglamento');
+    Route::get('/gestioninformacion/modificarreglamento','AdministradorController@informacion')->name('modificarreglamento');
+
+    //LO miooo
+    Route::get('/gestiondelegado/creardelegado','AdministradorController@creardelegado')->name('creardelegado');
+    Route::get('editardelegado','AdministradorController@actualizardelegado')->name('vistaAdministrador.editardelegado');
+    Route::post(('/createdelegado') , 'AdministradorController@agregardelegado')->name('createdelegado');
+    Route::post(('/editardelegado'),'AdministradorController@update1')->name('vistaAdministrador.actualizardelegado');
+    Route::get('/listadelegado','AdministradorController@listadelegado')->name('listadelegado');
+
+    //eliminar
+    Route::get(('listadelegado/{id}'), 'AdministradorController@destroye1')->name('delete.eliminardelegado');
 
     
-
 //});
-
-/*
-Route::get('/', function () {
-    return view('welcome');
-});
-Route::view('/welcome','welcome')->name('Laravel'); //vista laravel default
-*/

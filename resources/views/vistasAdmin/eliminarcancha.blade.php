@@ -1,7 +1,7 @@
 @extends('layouts.adminLayout')
 @section('content')
 <div class="container">
-  <h3>andate a gestion delegado po</h3>
+  <h2>aqui puede eliminar la cancha</h2>
   <p></p>
   
 </div>

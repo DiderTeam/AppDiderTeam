@@ -1,7 +1,9 @@
-@extends('layouts.adminLayout')
-
+<@extends('layouts.adminLayout')
 @section('content')
-
-<h1>Estoy en porcentaje uso</h1>
+<div class="container">
+  <h3>ESTOY EN EL PORCENTAJE DE USO ajjajajajajajajjaj</h3>
+  <p></p>
+  
+</div>
 
 @endsection
