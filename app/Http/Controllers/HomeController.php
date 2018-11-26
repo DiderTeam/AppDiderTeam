@@ -2,14 +2,9 @@
 
 namespace App\Http\Controllers;
 
-<<<<<<< HEAD
 use Illuminate\Support\Request;
 use Illuminate\Http\Facades\Input;
 use Illuminate\Support\Facades\DB;
-=======
-use DB;
-use Illuminate\Http\Request;
->>>>>>> e63e22bd2ce561ff6f2d24905da397113d7dbe37
 use App\User as User;
 use App\ComplejoDeportivo as ComplejoDeportivo;
 use App\Cancha as Cancha;
