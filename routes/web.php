@@ -28,11 +28,9 @@ Route::group(['middleware' => 'auth'], function () {
 
 /*------------------------ Vistas dinamicas Administrador----------------------------------*/
 
-Route::group(['middleware' => 'usuarioAdmin'], function () {
+//Route::group(['middleware' => 'usuarioAdmin'], function () {
 
     Route::get('/ComplejosDeportivos','ComplejoDeportivoController@index');
-
-    Route::get('/Admin','HomeController@VistaAdmin')->name('VistaAdmin');
 
     Route::get('/perfiladministrador','AdministradorController@Perfil')->name('perfiladministrador');
 
@@ -44,7 +42,7 @@ Route::group(['middleware' => 'usuarioAdmin'], function () {
 
     Route::get('/porcentajeuso','AdministradorController@porcentajeuso')->name('porcentajeuso');
 
-});
+//});
 
 /*
 Route::get('/', function () {

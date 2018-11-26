@@ -42,9 +42,11 @@ class HomeController extends Controller
         $users = User::all();
         return view('vistasDelegados.HistorialReservas',compact('users'));
     }
+    /*
     public function VistaAdmin()
     {
         return view('vistasAdmin.indexAdmin');
     }
+    */
     
 }

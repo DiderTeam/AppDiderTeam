@@ -22,7 +22,7 @@
                             <li class="list-group-item font-weight-bold">Nombre      : {{$delegadoActual->first()->nombre}}</li>
                             <li class="list-group-item font-weight-bold">Rut         : {{$delegadoActual->first()->rut}}</li>
                             <li class="list-group-item font-weight-bold">Telefono    : {{$delegadoActual->first()->telefono}}</li>
-                            <li class="list-group-item font-weight-bold">Rol         : {{$delegadoActual->first()->rol}}</li>
+                            {{--<li class="list-group-item font-weight-bold">Rol         : {{$delegadoActual->first()->rol}}</li> --}}
                         </ul>
                        
                     </div>

@@ -18,7 +18,6 @@ class CreateDatosUsuariosTable extends Migration
             $table->string('rut');
             $table->string('nombre');
             $table->string('telefono');
-            $table->enum('rol',['Administrador','Delegados','Alumno']);
             $table->string('carrera');
             $table->boolean('bloqueado');
             $table->integer('idUser')->unsigned();
