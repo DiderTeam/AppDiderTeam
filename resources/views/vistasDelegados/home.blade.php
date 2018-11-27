@@ -1,50 +1,27 @@
 @extends('layouts.app')
-
 @section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            
-            <div class="card">
-            
-                <div class="card-header">Sistema de reservas de canchas</div>
 
-                <div class="card-body">
-                    @if (session('status'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
-                        </div>
-                    @endif          
-                    <form class="bd-example">
-                        
-                    <fieldset> 
-                      <label for="select">Selecione una complejo deportivo</label>
-                       <div class="form-group">
-                          <select class="form-control">
-                          <option value="">--Seleccione un complejo deportivo--</option>
-                          {{--<a href="{{ action('PageController@logout') }}"></a> --}}
+<div class="container">
+      <div class="col-lg-4">                       
+                    <fieldset>
+                        <div class="form-group">
+                          <select class="form-control" name="complejoDeportivo" id="complejoDeportivo">
+                            <option value="0" disable="true" selected="true">=== Complejos Deportivos ===</option>
                             @foreach($complejosDeportivos as $complejoDeportivo)
                               <option value="{{ $complejoDeportivo ['id'] }}">{{ $complejoDeportivo ['nombre'] }}</option>
                             @endforeach
                           </select>
                         </div>
                         
+                        <div class="form-group">
+                          <select class="form-control" name="canchas" id="canchas">
+                            <option value="0" disable="true" selected="true">=== Canchas ===</option>
+                            @foreach($canchas as $cancha)
+                              <option value="{{ $cancha ['id'] }}">{{ $cancha ['nombre'] }}</option>
+                            @endforeach
+                          </select>
+                        </div>                                           
                         
-                        </div>
-                                <div class="col-md-4">
-                                    <select name="state" class="form-control">
-                                     <option>--State--</option>
-
-                                 </select>
-                             </div><div class="col-md-2"><span id="loader"><i class="fa fa-spinner fa-3x fa-spin"></i></span></div>
-
-                         </div>
-                     </form>
-                 </div>
-
-                 <div class="panel-footer">- By: [Your Name]</div>
-
- 
 
                             <label for="date">Selecione el dia</label>
                             <input type="date" id="date" />
@@ -81,18 +58,26 @@
                           <p>
                             <button type="submit">Reservar</button>
                         
-                          </p>
-                      
-                        </fieldset>
-                        
-                      </form>
-                      
-                    
+                          </p>                        
+                      </form>                    
                 </div>
-            </div>
-            
-
+            </div>               
         </div>
     </div>
 </div>
+
+  <script type="text/javascript">
+    $('#complejoDeportivo').change(function(e){
+        console.log(e);
+        var idComplejoDeportivo = e.target.value;
+          $.get('/home/json-canchas?idComplejoDeportivo=' + idComplejoDeportivo,function(data) {
+            console.log(data);
+            $('#canchas').empty();
+            $('#canchas').append('<option value="0" disable="true" selected="true">=== Canchas ===</option>');
+            $.each(data, function(index, canchasObj){
+                $('#canchas').append('<option value="'+ canchasObj.id +'">'+ canchasObj.name +'</option>');
+            });
+        });
+    });
+  </script>
 @endsection
