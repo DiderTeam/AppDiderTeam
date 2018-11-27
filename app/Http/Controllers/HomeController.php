@@ -16,6 +16,11 @@ class HomeController extends Controller
         $this->middleware('auth');
     }
 
+    public function mail(){
+        $receivers = Receiver::pluck('email');
+        Mail::to($receivers)->send(new EmergencyCallReceived($call));
+    }
+
     /**
      * Show the application dashboard.
      *

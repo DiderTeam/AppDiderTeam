@@ -11,6 +11,9 @@ return [
     | that are given by the password broker for a password update attempt
     | has failed, such as for an invalid token or invalid new password.
     |
+    Las siguientes líneas de idioma son las líneas predeterminadas que coinciden con las razones
+     | que proporciona el intermediario de contraseñas para un intento de actualización de contraseña
+     | ha fallado, por ejemplo, para un token no válido o una nueva contraseña no válida.
     */
 
     'password' => 'Passwords must be at least six characters and match the confirmation.',
