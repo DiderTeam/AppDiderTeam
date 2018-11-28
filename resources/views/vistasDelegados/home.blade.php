@@ -66,7 +66,7 @@
     </div>
 </div>
 
-  <script type="text/javascript">
+  <script>
     $('complejoDeportivo').change(function(e){
       console.log(e);
       var idComplejoDeportivo = e.target.value;

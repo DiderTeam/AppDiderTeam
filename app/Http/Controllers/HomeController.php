@@ -33,7 +33,7 @@ class HomeController extends Controller
     }
     public function canchas($idComplejoDeportivo) 
     {
-        $canchas = canchas::where('idComplejoDeportivo','=',$idComplejoDeportivo)->get();
+        $canchas = Cancha::where('idComplejoDeportivo','=',$idComplejoDeportivo)->get();
         return response()->json($canchas);
     }
     public function infoDelegado()
