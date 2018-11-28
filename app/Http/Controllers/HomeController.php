@@ -31,9 +31,8 @@ class HomeController extends Controller
         $complejosDeportivos = ComplejoDeportivo::all();
         return view('vistasDelegados.home',compact('complejosDeportivos'));
     }
-    public function canchas() 
+    public function canchas($idComplejoDeportivo) 
     {
-        $idComplejoDeportivo = Input::get('idComplejoDeportivo');
         $canchas = canchas::where('idComplejoDeportivo','=',$idComplejoDeportivo)->get();
         return response()->json($canchas);
     }

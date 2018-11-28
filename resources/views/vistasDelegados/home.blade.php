@@ -73,11 +73,7 @@
       $.get('/home/json-canchas?idComplejoDeportivo=' + idComplejoDeportivo,function(data) {
         console.log(data);
         $('canchas').empty();
-        $('canchas').append('<option value="0" disable="true" selected="true">=== Canchas ===</option>');
-        
-        $.each(data, function(index, canchasObj){
-          $('canchas').append('<option value="'+ canchasObj.id +'">'+ canchasObj.name +'</option>');
-        })
+        $('canchas').append('<option value="0" disable="true" selected="true">=== Canchas ===</option>');        
       });
     });
   </script>
