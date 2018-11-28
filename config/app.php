@@ -50,6 +50,9 @@ return [
     | the Artisan command line tool. You should set this to the root of
     | your application so that it is used when running Artisan tasks.
     |
+        Esta URL es utilizada por la consola para generar correctamente las URL cuando se usa
+     | La herramienta de línea de comando artesanal. Debe establecer esto en la raíz de
+     | Su aplicación para que se utilice al ejecutar tareas de Artisan.
     */
 
     'url' => env('APP_URL', 'http://localhost'),
