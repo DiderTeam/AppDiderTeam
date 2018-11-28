@@ -1,8 +1,9 @@
 <?php
 
 namespace App\Http\Middleware;
-
+use DB;
 use Closure;
+use App\User as User;
 
 class AdminMiddleware
 {
@@ -15,6 +16,11 @@ class AdminMiddleware
      */
     public function handle($request, Closure $next)
     {
-        return $next($request);
+        $idActual = auth()->user()->id;
+        $rol = User::where('id','=',$idActual)->value('rol');
+        if ($rol  =='Administrador') {
+            return redirect('perfiladministrador');
+        }
+        //return $next($request);
     }
 }

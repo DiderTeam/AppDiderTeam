@@ -28,7 +28,7 @@ Route::group(['middleware' => 'auth'], function () {
 
 /*------------------------ Vistas dinamicas Administrador----------------------------------*/
 
-//Route::group(['middleware' => 'usuarioAdmin'], function () {
+Route::group(['middleware' => 'adminMiddleware'], function () {
 
     Route::get('/perfiladministrador','AdministradorController@Perfil')->name('perfiladministrador');
 
@@ -55,5 +55,4 @@ Route::group(['middleware' => 'auth'], function () {
     //eliminar
     Route::get(('listadelegado/{id}'), 'AdministradorController@destroye1')->name('delete.eliminardelegado');
 
-    
-//});
+});
