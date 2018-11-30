@@ -19,7 +19,8 @@ class AdminMiddleware
         $idActual = auth()->user()->id;
         $rol = User::where('id','=',$idActual)->value('rol');
         if ($rol  =='Administrador') {
-            return redirect('perfiladministrador');
+            //return redirect('perfiladministrador'); // error here
+            return redirect()->action('AdministradorController@Perfil');
         }
         //return $next($request);
     }
