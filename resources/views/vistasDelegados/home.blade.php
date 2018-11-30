@@ -66,19 +66,30 @@
     </div>
 </div>
 
-  <script type="text/javascript">
-    $('#complejoDeportivo').change(function(e){
-      console.log(e);
-      var idComplejoDeportivo = e.target.value;
-      $.get('/home/json-canchas?idComplejoDeportivo=' + idComplejoDeportivo,function(data) {
-        console.log(data);
-        $('#canchas').empty();
-        $('#canchas').append('<option value="0" disable="true" selected="true">=== Canchas ===</option>');
-        
-        $.each(data, function(index, canchasObj){
-          $('#canchas').append('<option value="'+ canchasObj.id +'">'+ canchasObj.name +'</option>');
-        })
-      });
+  <script>
+  $(document).ready(function(){ 
+      $('#complejoDeportivo').on('change',function(){
+        var idComplejoDeportivo = $(this).val();
+        console.log(idComplejoDeportivo);
+        if(idComplejoDeportivo) {
+        $.ajax({
+            url:"json-canchas/"+idComplejoDeportivo,
+            type:"get",
+            data : {"_token":"{{ csrf_token() }}"},
+            dataType:"json",
+            success:function(data) {
+              if(data){
+                console.log(data);
+                $('#canchas').empty();
+                $('#canchas').append('<option value="0" disable="true" selected="true">=== Canchas ===</option>');
+                $.each(data, function(key, value){
+                    $('#canchas').append('<option value="'+value.id+'">' + value.nombre + '</option>');
+                });
+              }
+            }
+        });
+      }
     });
+  });
   </script>
 @endsection

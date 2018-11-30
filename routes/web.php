@@ -23,15 +23,11 @@ Route::view('/UbicaionC','vistasPublicas.UbicacionC')->name('ubicacion');
 
 Route::group(['middleware' => 'auth'], function () {
     
-    //Route::get('/ComplejosDeportivos','ComplejoDeportivoController@index');
-
     Route::get('/HistorialReservas','HomeController@HistorialReservas')->name('HistorialReservas');
 
     Route::get('/home', 'HomeController@index')->name('home'); // vista reserva delegado
 
-    Route::get('/home/json-canchas/{idComplejoDeportivos}','HomeController@canchas');
-
-    Route::get('complejoDeportivo/{complejoDeportivo}/Cancha', 'ComplejoDeportivoController@getCanchas');
+    Route::get('json-canchas/{idComplejoDeportivo}','HomeController@canchas');
 
     Route::get('/infoDelegado','HomeController@infoDelegado')->name('infoDelegado');
 
