@@ -17,12 +17,15 @@ Route::view('/UbicaionC','vistasPublicas.UbicacionC')->name('ubicacion');
 /*------------------------ Vistas dinamicas Delegados----------------------------------*/
 
 Route::group(['middleware' => 'auth'], function () {
-
+    
     Route::get('/HistorialReservas','HomeController@HistorialReservas')->name('HistorialReservas');
 
     Route::get('/home', 'HomeController@index')->name('home'); // vista reserva delegado
 
+    Route::get('json-canchas/{idComplejoDeportivo}','HomeController@canchas');
+
     Route::get('/infoDelegado','HomeController@infoDelegado')->name('infoDelegado');
+
 
 });
 
