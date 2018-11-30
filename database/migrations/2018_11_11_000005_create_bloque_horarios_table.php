@@ -18,8 +18,8 @@ class CreateBloqueHorariosTable extends Migration
             $table->time('horarioinicio');
             $table->time('horariofinal');
             $table->boolean('reservado');
-            $table->integer('idComplejoDeportivo')->unsigned();
-            $table->foreign('idComplejoDeportivo')->references('id')->on('complejos_deportivos');
+            $table->integer('idCancha')->unsigned();
+            $table->foreign('idCancha')->references('id')->on('canchas');
             $table->timestamps();
         });
     }

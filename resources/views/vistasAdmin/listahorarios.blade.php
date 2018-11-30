@@ -77,12 +77,12 @@
             }
             tbody td {
                 display: block;
-                text-align:rigth;
+                text-align:center;
             }
             tbody td:before {
                 content: attr(data-th);
                 display: block;
-                text-align:right;
+                text-align:center;
             }
         }
 
@@ -90,10 +90,10 @@
 <div class="d-flex justify-content-between align-items-end">
 
 <div class="container">
-<h1 class="pb-1"> Lista de los delegados  </h1>
+<h1 class="pb-1"> Lista de Horarios  </h1>
 
 <p>
-<a href="{{ route('creardelegado')}}" class="btn btn-success" >Crear un nuevo delegado</a>
+<a href="{{ route('crearhorario')}}" class="btn btn-success" >Crear un nuevo Horario</a>
 </p>
 </div>
 
@@ -106,31 +106,29 @@
 
 
 <div class="table-responsive">
-  <table class="table" id="User">
+  <table class="table" id="horarios"> 
   
                             <thead>
                                 <tr>
                         
-                                    <th scape="col"> #</th>
-                                    <th scape="col">Nombre</th>
-                                    <th scape="col">Email</th>
+                                    <th scape="col">Horario Inicio</th>
+                                    <th scape="col">Horario Final</th>
+                                    <th scape="col">Reserva</th>
+                                    <th scape="col">idCancha</th>
                                     <th scape="col">Acciones</th>
                                 </tr>
                             </thead>
                             {{--  --}}
                             <tbody>
-                                @foreach($users as $user)
+                                @foreach($horarios as $horario)
                                     <tr>
-                                        <td>{{ $user->id }}</td>
-                                        <td>{{ $user->name }}</td>
-                                        <td>{{ $user->email }}</td>
+                                        <td>{{ $horario->horarioinicio}}</td>
+                                        <td>{{ $horario->horariofinal }}</td>
+                                        <td>{{ $horario->reservado }}</td>
+                                        <td>{{ $horario->idCancha}}</td>
                                         <td>
-                                            <a href="{{ route('vistaAdministrador.editardelegado',"id=$user->id")}}" <button type="button" class="btn btn-primary">Editar</button></a>
-                                            
-                                            <a href="{{ route('delete.eliminardelegado',"$user->id") }}"" onclick="return confirm('¿Seguro que deseas eliminarlo?')" <button type="button" class="btn btn-danger">Eliminar</button></a> 
-                                           
-
-
+                
+            
                                         </td>
 
                                     </tr>

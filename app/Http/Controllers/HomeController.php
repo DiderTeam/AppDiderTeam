@@ -25,6 +25,7 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+  
     public function index()
     {
         $complejosDeportivos = ComplejoDeportivo::all();
@@ -33,9 +34,8 @@ class HomeController extends Controller
     }
     public function infoDelegado()
     {
-        $idActual = auth()->user()->id;
-        $delegadoActual = DatosUsuario::where('idUser','=',$idActual)->get();
-        return view('vistasDelegados.infoDelegado',compact('delegadoActual'));
+        $users = auth()->user();
+        return view('vistasDelegados.infoDelegado',compact('users'));
     }
     public function HistorialReservas()
     {

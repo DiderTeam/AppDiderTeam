@@ -11,46 +11,50 @@
 
                 <div class="card">
 
-                    <div class="card-header">Agregar cancha</div>
+                    <div class="card-header">Agregar Nuevo Complejo Deportivo</div>
                     <br>
 
                     <div class="card-body">
-                        <form class="form-group" method="POST" action="{{ route('agregarCancha') }}">
+                        <form class="form-group" method="POST" action="{{ route('createcomplejo') }}">
                             @csrf
-                            
+
                             <div class="form-group row">
                                 <label for="nombre" class="col-md-3 col-form-label  text-md-right">Nombre</label>
 
                                 <div class="col-md-9">
-                                    <input required type="text" name="nombre" class="form-control"placeholder="Juan Perez" >
+                                    <input required type="text" name="nombre" class="form-control"placeholder="Estadio Ruben Castro" >
                                 </div>
                             </div>
                             
 
                             <div class="form-group row">
-                                <label for="disponible" class="col-md-3 col-form-label  text-md-right">Disponibilidad</label>
+                                <label for="direccion" class="col-md-3 col-form-label  text-md-right">Direccion</label>
 
                                 <div class="col-md-9">
-                                    <input required type="int" name="disponible" class="form-control" placeholder="0">
+                                    <input required type="text" name="direccion" class="form-control" placeholder="Nva san martin">
                                 </div>
                             </div>
 
-                            <div class="form-group row">
-                                <label for="idComplejoDeportivo" class="col-md-3 col-form-label  text-md-right">IdComplejoDeportivo</label>
+     <div class="form-group row">
+                                <label for="coordenada" class="col-md-3 col-form-label  text-md-right">Coordenada</label>
 
                                 <div class="col-md-9">
-                                    <input required type="int" name="idComplejoDeportivo" class="form-control" placeholder="111">
+                                    <input required type="text" name="coordenada" class="form-control"placeholder="10:4:1" >
                                 </div>
                             </div>
                             
+
+                            
+                            
+
 <br>        <br><br><br>                            <button  class="btn btn-primary">
                                         Agregar
                                     </button>
-                                    <a  href="{{ route('listacanchas')}}"class="btn btn-link">Regresar al listado de Canchas </a>
+                                    <a  href="{{ route('gestioncomplejodeportivo')}}"class="btn btn-warning">Regresar al listado de complejos deportivos </a>
                                 </div>
                             </div>
                         </form>
-                        </div>
+                    </div>
                 </div>
             </div>
         </div>

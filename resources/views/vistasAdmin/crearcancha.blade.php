@@ -11,13 +11,22 @@
 
                 <div class="card">
 
-                    <div class="card-header">Agregar Delegados</div>
+                    <div class="card-header">Agregar cancha</div>
                     <br>
 
                     <div class="card-body">
                         <form class="form-group" method="POST" action="{{ route('createdelegado') }}">
                             @csrf
 
+
+                            <div class="form-group row">
+                                <label for="id" class="col-md-3 col-form-label  text-md-right">ID</label>
+
+                                <div class="col-md-9">
+                                    <input required type="int" name="id" class="form-control"placeholder="11111" >
+                                </div>
+                            </div>
+                            
                             <div class="form-group row">
                                 <label for="name" class="col-md-3 col-form-label  text-md-right">Nombre</label>
 

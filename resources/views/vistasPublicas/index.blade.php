@@ -27,7 +27,7 @@
         color: #FFF !important;
     }
   </style>
-  <body>
+  <body style="background-color:#F7FBFA ">
     <div class="row-sm bg-color1 text-right">
       <a class="text-white" href="http://pucv.cl">Ir a pucv.cl</a>
     </div>

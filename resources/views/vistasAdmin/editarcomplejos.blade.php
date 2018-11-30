@@ -10,44 +10,40 @@
                 @endif
                 <div class="card">
 
-                    <div class="card-header">Editar Cancha          {{ $canchas->nombre }}</div>
+                    <div class="card-header">Editar Complejos  {{ $complejos->nombre }}</div>
 <br>
                     <div class="card-body">
-                        <form class="form-group" method="POST" action="{{ route("vistaAdmin.editarcanchabd","id=$canchas->id") }}">
+                        <form class="form-group" method="POST" action="{{ route("vistaAdministrador.actualizarcomplejo","id=$complejos->id") }}">
                             @csrf
 
                             <div class="form-group row">
                                 <label for="nombre" class="col-md-3 col-form-label  text-md-right">Nombre:</label>
 
                                 <div class="col-md-9">
-                                    <input required type="text" name="nombre" class="form-control" value="{{ $canchas->nombre }}">
+                                    <input required type="text" name="nombre" class="form-control" value="{{ $complejos->nombre }}">
                                 </div>
                             </div>
                             <div class="form-group row">
-                                <label for="disponible" class="col-md-3 col-form-label  text-md-right">disponible</label>
+                                <label for="direccion" class="col-md-3 col-form-label  text-md-right">Direccion</label>
 
                                 <div class="col-md-9">
-                                    <input required type="int" name="disponible" class="form-control" value="{{ $canchas->disponible }}">
+                                    <input required type="text" name="direccion" class="form-control" value="{{ $complejos->direccion }}">
                                 </div>
                             </div>
-                            <div class="form-group row">
-                                <label for="idComplejoDeportivo" class="col-md-3 col-form-label  text-md-right">idComplejoDeportivo</label>
-
-                                <div class="col-md-9">
-                                    <input required type="int" name="idComplejoDeportivo" class="form-control" value="{{ $canchas->idComplejoDeportivo }}">
-                                </div>
                             </div>
                        
                             <div class="form-group row">
                                 <div class="col-md-9 ml-auto">
-                                    <button  type="submit" class="btn btn-default">
+                                    <button  type="submit" class="btn btn-primary">
                                         Editar
                                     </button>
                                     </button>
-                                    <a  href="{{ route('listacanchas')}}"class="btn btn-info">Regresar al listado de Canchas </a>
+                                    <a  href="{{ route('gestioncomplejodeportivo')}}"class="btn btn-success">Regresar al listado de los complejos</a>
+                                    
                                     <br>
                                     <br>
-                                    <a href="{{ route('listahorarios',"id=$canchas->id") }}" <button type="button" class="btn btn-danger">Ver horarios</button></a> 
+                                    <br>
+                                    <a  href="{{ route('listacanchas',"id=$complejos->id")}}"class="btn btn-warning">Ir a la lista de canchas</a>
                                 </div>
                             </div>
                         </form>
