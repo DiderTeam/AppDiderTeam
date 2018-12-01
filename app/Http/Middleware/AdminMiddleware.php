@@ -20,8 +20,8 @@ class AdminMiddleware
         $rol = User::where('id','=',$idActual)->value('rol');
         if ($rol  =='Administrador') {
             //return redirect('perfiladministrador'); // error here
-            return redirect()->action('AdministradorController@Perfil');
+            return redirect()->action('AdministradorController@Perfil'); //ver error
         }
-        //return $next($request);
+        return $next($request);
     }
 }
