@@ -5,10 +5,14 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Request;
 use Illuminate\Http\Facades\Input;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Log;
 use App\User as User;
 use App\ComplejoDeportivo as ComplejoDeportivo;
 use App\Cancha as Cancha;
 use App\DatosUsuario as DatosUsuario;
+use App\BloqueHorario as BloqueHorario;
+use App\Reserva as Reserva;
+use App\BloquesHorarioReserva as BloqueHorarioReserva;
 
 class HomeController extends Controller
 {
@@ -46,6 +50,13 @@ class HomeController extends Controller
     {
         $users = User::all();
         return view('vistasDelegados.HistorialReservas',compact('users'));
+    }
+    public function bloquesHorarios($fechasolicitada)
+    {
+        $fecha = $fechasolicitada->format('d-m-Y'); //No carga la funcion format
+        $idReservas = Reserva::where('fechasolicitud ','=',$fecha)->pluck('id');
+        $horarios = BloqueHorarioReserva::where('idReserva','=',$idReservas)->join('bloques_horarios')->pluck('horarioInicio','horarioFinal');
+        return response()->json($horarios);
     }
     /*
     public function VistaAdmin()

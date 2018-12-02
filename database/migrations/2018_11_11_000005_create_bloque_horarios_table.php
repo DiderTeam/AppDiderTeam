@@ -17,8 +17,6 @@ class CreateBloqueHorariosTable extends Migration
             $table->increments('id');
             $table->time('bloqueInicio');
             $table->time('bloqueFinal');
-            $table->integer('idComplejoDeportivo')->unsigned();
-            $table->foreign('idComplejoDeportivo')->references('id')->on('complejos_deportivos');
             $table->timestamps();
         });
     }
