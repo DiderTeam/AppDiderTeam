@@ -18,8 +18,8 @@ class CreateReservasTable extends Migration
             $table->date('fechasolicitud');
             $table->integer('idCanchas')->unsigned();
             $table->foreign('idCanchas')->references('id')->on('canchas');
-            $table->integer('idUser')->unsigned();
-            $table->foreign('idUser')->references('id')->on('users');
+            $table->integer('idDatosUsuario')->unsigned();
+            $table->foreign('idDatosUsuario')->references('id')->on('datos_usuarios');
             $table->timestamps();
         });
     }

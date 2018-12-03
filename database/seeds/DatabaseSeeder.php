@@ -14,7 +14,7 @@ class DatabaseSeeder extends Seeder
         $this->call(userSeeder::class);
         $this->call(datosUsuarioSeeder::class);
         $this->call(reservasSeeder::class);
-        $this->call(ComplejoDeportivoTableSeeder::class);
+        $this->call(complejoSeeder::class);
         $this->call(canchasSeeder::class);
         $this->call(bloqueReservaSeeder::class);
         $this->call(bloqueHorarioSeeder::class);

@@ -16,8 +16,6 @@ class CreateComplejosDeportivosTable extends Migration
         Schema::create('complejos_deportivos', function (Blueprint $table) {
             $table->increments('id');
             $table->string('nombre');
-            $table->time('horarioInicio');
-            $table->time('horarioFinal');
             $table->string('direccion');
             $table->string('coordenada');
             $table->timestamps();

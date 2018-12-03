@@ -3,8 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
-use App\ComplejoDeportivo as ComplejoDeportivo;
-
+use Illuminate\Notifications\Notifiable;
 class Cancha extends Model
 {
     use Notifiable;
@@ -23,18 +22,18 @@ class Cancha extends Model
      *
      * @var array
      */
-    
+    /*
     protected $hidden = [
         'password', 'remember_token',
     ];
 
     protected $table = 'canchas';
     protected $primaryKey = 'id';
-    //protected $fillable = ['nombre','disponible','idComplejoDeportivo'];
+    protected $fillable = ['nombre','disponible'];
 
     public function ComplejoDeportivo(){
-        return $this->belongsTo('ComplejoDeportivo','idComplejoDeportivo');
+        return $this->belongsTo('App\ComplejoDeportivo');
+        
     }
-
+    */
 }
- 
