@@ -28,6 +28,7 @@ class HomeController extends Controller
   
     public function index()
     {
+        //dd(user()->auth()->id);
         $complejosDeportivos = ComplejoDeportivo::all();
         $canchas = Cancha::all();
         return view('vistasDelegados.home',compact('complejosDeportivos','canchas'));
