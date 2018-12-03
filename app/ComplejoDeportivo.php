@@ -8,10 +8,11 @@ class ComplejoDeportivo extends Model
 {
     protected $table = 'complejos_deportivos';
     protected $primaryKey  = 'id';
-    protected $fillable = ['nombre','direccion','coordenada'];
+    protected $fillable = ['nombre','direccion','coordenadas','horarioInicio','horarioFinal'];
 
-    public function Cancha(){
+    public function cancha(){
         return $this->hasMany('App\Cancha');
     }
+    
 }
 

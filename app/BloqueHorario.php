@@ -6,16 +6,13 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Notifications\Notifiable;
 
 class BloqueHorario extends Model
-{
-    use Notifiable;
+{    
+    protected $table = 'bloque_horarios';
+    protected $primaryKey = 'id';
+    protected $fillable = ['bloqueInicio','bloqueFinal','idComplejoDeportivo'];
 
-    /**
-     * The attributes that are mass assignable.
-     *
-     * @var array
-     */
-    protected $fillable = [
-        'id','horarioinicio', 'horariofinal', 'reservado','idCancha',
-    ];
-
+    public function reservas()
+    {
+        return $this->belongsToMany('App\Reserva');
+    }
 }

@@ -15,11 +15,10 @@ class CreateBloqueHorariosTable extends Migration
     {
         Schema::create('bloque_horarios', function (Blueprint $table) {
             $table->increments('id');
-            $table->time('horarioinicio');
-            $table->time('horariofinal');
-            $table->boolean('reservado');
-            $table->integer('idCancha')->unsigned();
-            $table->foreign('idCancha')->references('id')->on('canchas');
+            $table->time('bloqueInicio');
+            $table->time('bloqueFinal');
+            $table->integer('idComplejoDeportivo')->unsigned();
+            $table->foreign('idComplejoDeportivo')->references('id')->on('complejos_deportivos');
             $table->timestamps();
         });
     }
