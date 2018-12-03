@@ -12,7 +12,7 @@ use App\Cancha as Cancha;
 use App\DatosUsuario as DatosUsuario;
 use App\BloqueHorario as BloqueHorario;
 use App\Reserva as Reserva;
-use App\BloquesHorarioReserva as BloqueHorarioReserva;
+use App\BloqueHorarioReserva as BloqueHorarioReserva;
 
 class HomeController extends Controller
 {
@@ -53,9 +53,8 @@ class HomeController extends Controller
     }
     public function bloquesHorarios($fechasolicitada)
     {
-        $fecha = $fechasolicitada->format('d-m-Y'); //No carga la funcion format
-        $idReservas = Reserva::where('fechasolicitud ','=',$fecha)->pluck('id');
-        $horarios = BloqueHorarioReserva::where('idReserva','=',$idReservas)->join('bloques_horarios')->pluck('horarioInicio','horarioFinal');
+        $idReservas = DB::select('SELECT id FROM reservas WHERE fechasolicitud = "'.$fechasolicitada.'"');
+        $horarios = BloqueHorarioReserva::where('idReserva','=',$idReservas)->join('bloques_horarios','bloques_horarios.id','=','bloqueshorarios_reservas.idBloqueHorario');
         return response()->json($horarios);
     }
     /*

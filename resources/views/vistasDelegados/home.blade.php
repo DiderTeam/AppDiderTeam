@@ -56,6 +56,7 @@
               data : {"_token":"{{ csrf_token() }}"},
               dataType:"json",
               success:function(data){
+                console.log(data);
                 if(data){
                   $('#canchas').empty();
                   $('#canchas').append('<option value="0" disable="true" selected="true">=== Canchas ===</option>');
