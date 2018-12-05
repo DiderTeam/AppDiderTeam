@@ -23,8 +23,6 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/home', 'HomeController@index')->name('home'); // vista reserva delegado
     //Route::get('/home','AdministradorController@irperfil');
     Route::get('/infoDelegado','HomeController@infoDelegado')->name('infoDelegado');
-    
-
     Route::get('editarperfildelegado','AdministradorController@actualizarperfil')->name('vistasDelegados.editardelegado');
     Route::post(('/editarperfildelegado'),'AdministradorController@update2')->name('vistasDelegados.actualizardelegado');
 });
