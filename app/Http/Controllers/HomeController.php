@@ -32,6 +32,8 @@ class HomeController extends Controller
      */
     public function index()
     {
+        //$ejem = DB::table('bloque_horarios')->where('bloqueInicio','>=',$min)->where('bloqueFinal','<=',$max)->join('bloqueshorarios_reservas','bloqueshorarios_reservas.idBloqueHorario','=','bloque_horarios.id')->where('bloqueshorarios_reservas.idReserva','=',$idReserva)->get(array('bloqueInicio','bloqueFinal'));
+        //dd($ejem);    
         $complejosDeportivos = ComplejoDeportivo::all();
         return view('vistasDelegados.home',compact('complejosDeportivos'));
     }
@@ -51,11 +53,22 @@ class HomeController extends Controller
         $users = User::all();
         return view('vistasDelegados.HistorialReservas',compact('users'));
     }
-    public function bloquesHorarios($fechasolicitada)
+    public function bloquesHorarios($fechasolicitada,$idComplejoDeportivo)
     {
-        $idReservas = DB::select('SELECT id FROM reservas WHERE fechasolicitud = "'.$fechasolicitada.'"');
-        $horarios = BloqueHorarioReserva::where('idReserva','=',$idReservas)->join('bloques_horarios','bloques_horarios.id','=','bloqueshorarios_reservas.idBloqueHorario');
-        return response()->json($horarios);
+        $idReservas = Reserva::where('fechasolicitud','=',$fechasolicitada)->join('canchas','canchas.id','=','reservas.idCanchas')->where('canchas.idComplejoDeportivo','=',$idComplejoDeportivo)->get(array('reservas.id'));
+        //$idReserva=1;
+        $min = ComplejoDeportivo::where('id','=',$idComplejoDeportivo)->min('horarioInicio');
+        $max= ComplejoDeportivo::where('id','=',$idComplejoDeportivo)->max('horarioFinal');
+        //$ejem = DB::table('bloque_horarios')->where('bloqueInicio','>=',$min)->where('bloqueFinal','<=',$max)->join('bloqueshorarios_reservas','bloqueshorarios_reservas.idBloqueHorario','=','bloque_horarios.id')->where('bloqueshorarios_reservas.idReserva','=',$idReserva)->get(array('bloqueInicio','bloqueFinal'));
+        //dd($ejem);    
+        $flag=true;
+        $horarios=array();
+        foreach($idReservas as $key => $value){
+                $horarios = array_push(DB::table('bloque_horarios')->where('bloqueInicio','>=',$min)->where('bloqueFinal','<=',$max)->join('bloqueshorarios_reservas','bloqueshorarios_reservas.idBloqueHorario','=','bloque_horarios.id')->where('bloqueshorarios_reservas.idReserva','=',$value->id)->get(array('bloqueInicio','bloqueFinal')));                
+            }
+        $bloques=BloqueHorario::where('bloqueInicio','>=',$min)->where('bloqueFinal','<=',$max)->get(array('bloqueInicio','bloqueFinal'));
+        $cargabloques=array($horarios,$bloques,$idReservas);
+        return response()->json($cargabloques);
     }
     /*
     public function VistaAdmin()
@@ -64,4 +77,5 @@ class HomeController extends Controller
     }
     */
     
+}
 }

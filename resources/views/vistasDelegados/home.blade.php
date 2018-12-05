@@ -25,13 +25,7 @@
                   <button type="button" id="button">Aceptar</button>
                 
                   <fieldset class="form-group">
-                    <div class="row">
-                      <legend class="col-form-label col-sm-2 pt-0">Bloques de horario</legend>
-                      <div class="col-sm-10">
-                        <div class="form-check">
-                          <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios" value="option1" checked>
-                        </div>                        
-                      </div>
+                    <div class="row">                     
                     </div>
                   </fieldset>
                                     
@@ -48,7 +42,7 @@
   <script>
     $(document).ready(function(){ 
         $('#complejoDeportivo').on('change',function(){
-          var idComplejoDeportivo = $(this).val();
+          var idComplejoDeportivo = $('#complejoDeportivo').val();
           if(idComplejoDeportivo) {
           $.ajax({
               url:"json-canchas/"+idComplejoDeportivo,
@@ -61,6 +55,8 @@
                   $('#canchas').empty();
                   $('#canchas').append('<option value="0" disable="true" selected="true">=== Canchas ===</option>');
                   $.each(data, function(key, value){
+                    console.log(value.id);
+                    console.log(value.nombre);
                       $('#canchas').append('<option value="'+value.id+'">' + value.nombre + '</option>');
                   });
                 }
@@ -81,20 +77,34 @@
     $(document).ready(function(){ 
       $('#button').click(function(){
         var fechaSolicitada = $('#date').val();
-        console.log(fechaSolicitada);
+        var idComplejoDeportivo = $('#complejoDeportivo').val();;
         if(fechaSolicitada){
           $.ajax({
-                url:"json-bloquesHorarios/"+fechaSolicitada,
+                url:"json-bloquesHorarios/"+fechaSolicitada+"/"+idComplejoDeportivo,
                 type:"get",
                 data : {"_token":"{{ csrf_token() }}"},
                 dataType:"json",
                 success:function(data){
                   console.log(data);
                   if(data){
-                    var i=1;      
-                    $.each(data, function(value){
-                      $('#gridRadios'+i+'').append('<input class="form-check-input" type="radio" name="gridRadios" id="gridRadios'+i+'" value="'+value.horarioInicio+' : '+value.horarioFinal+'" checked>');
-                      i++;
+                    var formCheck= $(".row")
+                    var i=1,c=0;
+                    var reservados = data[0];
+                    var bloques = data[1];
+                    var idReservas = data[2];
+                    var flag= true;   
+                    $.each(bloques, function(keyBloques,valueBloques){
+                      $.each(reservados, function(keyBloques,valueReservados){
+                        console.log(valueReservados.bloqueInicio);
+                        console.log(valueBloques.bloqueInicio);
+                        console.log(valueReservados.bloqueFinal);
+                        console.log(valueBloques.bloqueFinal);
+                        if(flag==true && valueBloques.bloqueInicio != valueReservados.bloqueInicio && valueBloques.bloqueFinal != valueReservados.bloqueFinal){
+                          $(formCheck).append('<div class="col-sm-10"><input type="radio" name="gridRadios" id="gridRadios'+i+'" value="0" checked>'+valueBloques.bloqueInicio+' : '+valueBloques.bloqueFinal+'</div>');
+                          flag=false;
+                        }
+                      });
+                      flag=true;                    
                     });                                                    
                   }
                 }

@@ -24,7 +24,7 @@ Route::group(['middleware' => 'auth'], function () {
 
     Route::get('json-canchas/{idComplejoDeportivo}','HomeController@canchas');
 
-    Route::get('json-bloquesHorarios/{fechaSolicitada}','HomeController@bloquesHorarios');
+    Route::get('json-bloquesHorarios/{fechaSolicitada}/{idComplejoDeportivo}','HomeController@bloquesHorarios');
 
     Route::get('/infoDelegado','HomeController@infoDelegado')->name('infoDelegado');
 
