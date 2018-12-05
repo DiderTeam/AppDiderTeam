@@ -1,6 +1,8 @@
 <!DOCTYPE html>
+
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-<head>
+<head style="background-color:#339fc3">
+
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -19,7 +21,7 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
-<body>
+<body style="background-color:#339fc3">
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light navbar-laravel">
             <div class="container">

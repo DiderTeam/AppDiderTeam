@@ -90,10 +90,10 @@
 <div class="d-flex justify-content-between align-items-end">
 
 <div class="container">
-<h1 class="pb-1"> Lista de los delegados  </h1>
+<h1 class="pb-1"> Lista de los Complejos Deportivos </h1>
 
 <p>
-<a href="{{ route('creardelegado')}}" class="btn btn-success" >Crear un nuevo delegado</a>
+<a href="{{ route('crearnuevocomplejo')}}" class="btn btn-success" >Crear un nuevo complejo deportivo</a>
 </p>
 </div>
 
@@ -103,38 +103,38 @@
                 </div>
             @endif
  
-            </p>
+
 
 <div class="table-responsive">
-  <table class="table" id="User">
+  <table class="table" id="Complejos">
   
                             <thead>
                                 <tr>
-                        
-                                    <th scape="col"> #</th>
+                                    
                                     <th scape="col">Nombre</th>
-                                    <th scape="col">Email</th>
-                                    <th scape="col">Acciones</th>
+                                    <th scape="col">Id</th>
+                                    <th scape="col">Direccion</th>
                                 </tr>
                             </thead>
                             {{--  --}}
                             <tbody>
-                                @foreach($users as $user)
-                                @if($user->rol == 'Delegados') 
+                                @foreach($complejos as $complejo)
                                     <tr>
-                                        <td>{{ $user->id }}</td>
-                                        <td>{{ $user->name }}</td>
-                                        <td>{{ $user->email }}</td>
-                                        <td>{{ $user->carrera }}</td>
+                                        <td>{{ $complejo->nombre}}</td>
+                                        <td>{{ $complejo->id }}</td>
+                                        <td>{{ $complejo->direccion }}</td>
                                         <td>
-                                            <a href="{{ route('vistaAdministrador.editardelegado',"id=$user->id")}}" <button type="button" class="btn btn-primary">Editar</button></a>
-                                            
-                                            <a href="{{ route('delete.eliminardelegado',"$user->id") }}"" onclick="return confirm('¿Seguro que deseas eliminarlo?')" <button type="button" class="btn btn-danger">Eliminar</button></a> 
+                                            <a href="{{ route('vistaAdministrador.editarcomplejos',"id=$complejo->id")}}" <button type="button" class="btn btn-warning">Editar complejo deportivo</button></a>
+                                            <a href="{{ route('delete.eliminarcomplejo',"$complejo->id") }}"" onclick="return confirm('¿Seguro que deseas eliminar el complejo?')" <button type="button" class="btn btn-danger">Eliminar complejo</button></a>
+                                          
                                            
 
 
                                         </td>
-@endif
+
+
+                                        </td>
+
                                     </tr>
                                 @endforeach
                             </tbody>    

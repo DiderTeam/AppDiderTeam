@@ -90,10 +90,10 @@
 <div class="d-flex justify-content-between align-items-end">
 
 <div class="container">
-<h1 class="pb-1"> Lista de los delegados  </h1>
+<h1 class="pb-1"> Lista de Canchas  </h1>
 
 <p>
-<a href="{{ route('creardelegado')}}" class="btn btn-success" >Crear un nuevo delegado</a>
+<a href="{{ route('crearcancha',"id=$complejos->id")}}" class="btn btn-success" >Crear un nuevo cancha</a>
 </p>
 </div>
 
@@ -103,42 +103,44 @@
                 </div>
             @endif
  
-            </p>
+
 
 <div class="table-responsive">
-  <table class="table" id="User">
+  <table class="table" id="Cancha"> 
   
                             <thead>
                                 <tr>
                         
-                                    <th scape="col"> #</th>
+                                    <th scape="col"> id</th>
                                     <th scape="col">Nombre</th>
-                                    <th scape="col">Email</th>
+                                    <th scape="col">disponibilidad</th>
+                                    <th scape="col">idComplejo</th>
                                     <th scape="col">Acciones</th>
                                 </tr>
                             </thead>
                             {{--  --}}
                             <tbody>
-                                @foreach($users as $user)
-                                @if($user->rol == 'Delegados') 
+                                @foreach($canchas as $cancha)
                                     <tr>
-                                        <td>{{ $user->id }}</td>
-                                        <td>{{ $user->name }}</td>
-                                        <td>{{ $user->email }}</td>
-                                        <td>{{ $user->carrera }}</td>
+                                        <td>{{ $cancha->id }}</td>
+                                        <td>{{ $cancha->nombre }}</td>
+                                        <td>{{ $cancha->disponible }}</td>
+                                        <td>{{ $cancha->idComplejoDeportivo}}</td>
                                         <td>
-                                            <a href="{{ route('vistaAdministrador.editardelegado',"id=$user->id")}}" <button type="button" class="btn btn-primary">Editar</button></a>
-                                            
-                                            <a href="{{ route('delete.eliminardelegado',"$user->id") }}"" onclick="return confirm('¿Seguro que deseas eliminarlo?')" <button type="button" class="btn btn-danger">Eliminar</button></a> 
+                                            <a href="{{ route('vistasAdmin.modificarcancha',"id=$cancha->id")}}" <button type="button" class="btn btn-primary">Editar</button></a>
+                                            <a href="{{ route('delete.eliminarcancha',"$cancha->id") }}"" onclick="return confirm('¿Seguro que deseas eliminar la cancha?')" <button type="button" class="btn btn-danger">Eliminar</button></a> 
                                            
-
-
+            
                                         </td>
-@endif
+
                                     </tr>
                                 @endforeach
+                                
                             </tbody>    
                         </table>
+                        <p>
+                        <a  href="{{ route('gestioncomplejodeportivo')}}"class="btn btn-warning">Regresar al listado de los complejos</a>
+                    </p>
 </div>
        
 
