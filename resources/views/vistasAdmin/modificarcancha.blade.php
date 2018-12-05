@@ -44,7 +44,7 @@
                                         Editar
                                     </button>
                                     </button>
-                                    <a  href="{{ route('gestioncomplejodeportivo')}}"class="btn btn-success">Regresar al listado de los complejos</a>
+                                    <a  href="{{ route('listacanchas')}}"class="btn btn-info">Regresar al listado de Canchas </a>
                                     <br>
                                     <br>
                                     <a href="{{ route('listahorarios',"id=$canchas->id") }}" <button type="button" class="btn btn-danger">Ver horarios</button></a> 

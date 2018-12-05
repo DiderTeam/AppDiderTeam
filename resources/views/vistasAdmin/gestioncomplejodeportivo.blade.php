@@ -112,8 +112,8 @@
                                 <tr>
                                     
                                     <th scape="col">Nombre</th>
-                                    <th scape="col">Id</th>
                                     <th scape="col">Direccion</th>
+                                    <th scape="col">Acciones</th>
                                 </tr>
                             </thead>
                             {{--  --}}
@@ -121,8 +121,9 @@
                                 @foreach($complejos as $complejo)
                                     <tr>
                                         <td>{{ $complejo->nombre}}</td>
-                                        <td>{{ $complejo->id }}</td>
+                                       
                                         <td>{{ $complejo->direccion }}</td>
+                                        
                                         <td>
                                             <a href="{{ route('vistaAdministrador.editarcomplejos',"id=$complejo->id")}}" <button type="button" class="btn btn-warning">Editar complejo deportivo</button></a>
                                             <a href="{{ route('delete.eliminarcomplejo',"$complejo->id") }}"" onclick="return confirm('¿Seguro que deseas eliminar el complejo?')" <button type="button" class="btn btn-danger">Eliminar complejo</button></a>

@@ -5,7 +5,8 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">{{ __('Inicio de sesión') }}</div>
+                {{-- <div class="card-header">{{ __('Inicio de sesión') }}</div> {{--Ver cual aceptar--}}
+                <div class="card-header">{{ __('Iniciar Sesión') }}</div>
 
                 <div class="card-body">
                     <form method="POST" action="{{ route('login') }}">
@@ -54,11 +55,19 @@
                         <div class="form-group row mb-0">
                             <div class="col-md-8 offset-md-4">
                                 <button type="submit" class="btn btn-primary">
+<<<<<<< HEAD
                                     {{ __('Ingresar') }}
                                 </button>
 
                                 <a class="btn btn-link" href="{{ route('password.request') }}">
                                     {{ __('¿Olvido su contraseña?') }}
+=======
+                                    {{ __('Iniciar Sesión') }}
+                                </button>
+
+                                <a class="btn btn-link" href="{{ route('password.request') }}">
+                                    {{ __('¿Olvidaste la contraseña?') }}
+>>>>>>> b244befeb990ee00419796ab8a3520d1c7e1e7a7
                                 </a>
                             </div>
                         </div>

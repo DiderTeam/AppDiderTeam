@@ -15,7 +15,7 @@
                     <br>
 
                     <div class="card-body">
-                        <form class="form-group" method="POST" action="{{ route('agregarCancha'),"id=$complejos->id" }}">
+                        <form class="form-group" method="POST" action="{{ route('agregarCancha') }}">
                             @csrf
                             
                             <div class="form-group row">
@@ -39,14 +39,14 @@
                                 <label for="idComplejoDeportivo" class="col-md-3 col-form-label  text-md-right">IdComplejoDeportivo</label>
 
                                 <div class="col-md-9">
-                                    <input required readonly="readonly" type="int" name="idComplejoDeportivo" class="form-control" value="{{$complejos->id}}" >
+                                    <input required type="int" name="idComplejoDeportivo" class="form-control" placeholder="111">
                                 </div>
                             </div>
                             
 <br>        <br><br><br>                            <button  class="btn btn-primary">
                                         Agregar
                                     </button>
-                                    <a  href="{{ route('listacanchas',"id=$complejos->id")}}"class="btn btn-link">Regresar al listado de Canchas </a>
+                                    <a  href="{{ route('listacanchas')}}"class="btn btn-link">Regresar al listado de Canchas </a>
                                 </div>
                             </div>
                         </form>

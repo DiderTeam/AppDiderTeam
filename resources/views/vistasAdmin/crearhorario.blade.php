@@ -41,7 +41,6 @@
                                 <div class="col-md-9">
                                     <input required type="text" name="reservado" class="form-control" placeholder="1">
                                 </div>
-                                </div>
 
                                  <div class="form-group row">
                                 <label for="idCancha" class="col-md-3 col-form-label  text-md-right">Id cancha:</label>

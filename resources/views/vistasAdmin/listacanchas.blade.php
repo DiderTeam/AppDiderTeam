@@ -90,10 +90,10 @@
 <div class="d-flex justify-content-between align-items-end">
 
 <div class="container">
-<h1 class="pb-1"> Lista de Canchas  </h1>
+<h1 class="pb-1"> Lista de Canchas    </h1>
 
 <p>
-<a href="{{ route('crearcancha',"id=$complejos->id")}}" class="btn btn-success" >Crear un nuevo cancha</a>
+<a href="{{ route('crearcancha')}}" class="btn btn-success" >Crear un nuevo cancha</a>
 </p>
 </div>
 
@@ -127,7 +127,7 @@
                                         <td>{{ $cancha->disponible }}</td>
                                         <td>{{ $cancha->idComplejoDeportivo}}</td>
                                         <td>
-                                            <a href="{{ route('vistasAdmin.modificarcancha',"id=$cancha->id")}}" <button type="button" class="btn btn-primary">Editar</button></a>
+                                            <a href="{{ route('vistaAdmin.editarcancha',"id=$cancha->id")}}" <button type="button" class="btn btn-primary">Editar</button></a>
                                             <a href="{{ route('delete.eliminarcancha',"$cancha->id") }}"" onclick="return confirm('¿Seguro que deseas eliminar la cancha?')" <button type="button" class="btn btn-danger">Eliminar</button></a> 
                                            
             
@@ -137,10 +137,9 @@
                                 @endforeach
                                 
                             </tbody>    
+
                         </table>
-                        <p>
-                        <a  href="{{ route('gestioncomplejodeportivo')}}"class="btn btn-warning">Regresar al listado de los complejos</a>
-                    </p>
+                        <a  href="{{ route('gestioncomplejodeportivo')}}"class="btn btn-default">Regresar al listado de los complejos</a>
 </div>
        
 

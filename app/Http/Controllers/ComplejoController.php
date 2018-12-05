@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\ComplejoDeportivo as Complejo;
+use App\Cancha as Cancha;
 use Illuminate\Http\Request;
 
 class ComplejoController extends Controller
@@ -62,6 +63,7 @@ class ComplejoController extends Controller
     {
       //dd($request->get("email"));
         $complejos = Complejo::find($request->get("id"));
+     
         //$users->name =$request->name;
         //$users->email =$request->email;
         //$users->password =$request->password;

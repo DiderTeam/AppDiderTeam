@@ -2,6 +2,7 @@
 @section('content')
 
 
+
 <style type="text/css">
         
         h2,h1{
@@ -77,24 +78,22 @@
             }
             tbody td {
                 display: block;
-                text-align:center;
+                text-align:rigth;
             }
             tbody td:before {
                 content: attr(data-th);
                 display: block;
-                text-align:center;
+                text-align:right;
             }
         }
 
     </style>
 <div class="d-flex justify-content-between align-items-end">
 
-<div class="container">
-<h1 class="pb-1"> Lista de los delegados  </h1>
-
 <p>
-<a href="{{ route('creardelegado')}}" class="btn btn-success" >Crear un nuevo delegado</a>
+<a href="{{ route('creardelegado')}}" class="btn btn-primary">Crear un nuevo delegado</a>
 </p>
+<h1 class="pb-1"> Lista de los delegados  </h1>
 </div>
 
           @if(session('success'))
@@ -103,11 +102,8 @@
                 </div>
             @endif
  
-            </p>
 
-<div class="table-responsive">
-  <table class="table" id="User">
-  
+<table class="table" id="User">
                             <thead>
                                 <tr>
                         
@@ -127,9 +123,9 @@
                                         <td>{{ $user->email }}</td>
                                         <td>{{ $user->carrera }}</td>
                                         <td>
-                                            <a href="{{ route('vistaAdministrador.editardelegado',"id=$user->id")}}" <button type="button" class="btn btn-primary">Editar</button></a>
+                                            <a href="{{ route('vistaAdministrador.editardelegado',"id=$user->id")}}"><span class="oi oi-pencil"></span></a>
                                             
-                                            <a href="{{ route('delete.eliminardelegado',"$user->id") }}"" onclick="return confirm('¿Seguro que deseas eliminarlo?')" <button type="button" class="btn btn-danger">Eliminar</button></a> 
+                                            <a href="{{ route('delete.eliminardelegado',"$user->id") }}"" onclick="return confirm('¿Seguro que deseas eliminarlo?')"><span class="oi oi-delete"></span></a> 
                                            
 
 
@@ -139,10 +135,5 @@
                                 @endforeach
                             </tbody>    
                         </table>
-</div>
-       
-
-</div>
-
 
 @endsection
